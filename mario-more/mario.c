@@ -3,7 +3,13 @@
 
 int main(void)
 {
- height = get_int("Height : ");
+ int height = get_int("Height : ");
  if (height > 0)
-
+ {
+    for 
+ }
+ else
+ {
+    get_int("Height : ");
+ }
 }
