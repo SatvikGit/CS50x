@@ -3,7 +3,7 @@
 
 int main(void)
 {
- height = get_int("Height of block : ");
+ height = get_int("Height : ");
  if (height > 0)
-    
+
 }
