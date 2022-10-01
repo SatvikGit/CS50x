@@ -4,6 +4,6 @@
 int main(void)
 {
  height = get_int("Height of block : ");
- if height > 0
+ if (height > 0)
     
 }
