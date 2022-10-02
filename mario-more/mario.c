@@ -24,7 +24,7 @@ int main(void)
          printf("#");
       }
       printf("\n");
-   }
+   ]
    for (int i = 0; i < height; i++)
    {
       for (int j = i; j >= i;  j--)
