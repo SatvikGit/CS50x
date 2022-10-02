@@ -19,8 +19,10 @@ for (int i = 0; i < height; i++)
       {
          printf("#");
       }
-      printf("\n");
-   }
+   if (int i < height);
+      {
+         printf("\n");
+      }
    for (int i = 0; i < height; i++)
    {
       for (int j = i; j >= i;  j--)
