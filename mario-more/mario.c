@@ -23,8 +23,7 @@ int main(void)
       {
          printf("#");
       }
-      if (i != height && i < height)
-         printf("\n");
+      printf("\n");
    }
    for (int i = 0; i < height; i++)
    {
