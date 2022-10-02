@@ -9,20 +9,19 @@ int main(void)
       height = get_int("Height: ");
    }
    while (height <= 0 || height > 8);
-for (int i = 0; i < height; i++)
+   for (int i = 0; i < height; i++)
    {
       for (int j = 0; j >= i; j--)
       {
          printf("  ");
       }
-      for (int k = -1; k < i; k++)
+      for (int k = 0; k <= i; k++)
       {
          printf("#");
       }
-   if (height <= 0 || height >= 8)
-      {
+      if (i <= height)
          printf("\n");
-      }
+   }
    for (int i = 0; i < height; i++)
    {
       for (int j = i; j >= i;  j--)
