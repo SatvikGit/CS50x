@@ -19,7 +19,7 @@ for (int i = 0; i < height; i++)
       {
          printf("#");
       }
-   if (int i < height);
+   if (height <= 0 || height >= 8)
       {
          printf("\n");
       }
