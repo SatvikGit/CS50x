@@ -17,8 +17,4 @@ int main(void)
       }
       printf("\n");
    }
-   do
-   {
-      height = get_int("Height : ");
-   }
 }
