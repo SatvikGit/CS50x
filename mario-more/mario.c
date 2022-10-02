@@ -11,7 +11,7 @@ int main(void)
    while (height <= 0 || height > 8);
    for (int i = 0; i < height; i++)
    {
-      for (int j = 0; j == i; j--)
+      for (int j = 0; j >= i; j--)
       {
          printf("  ");
       }
@@ -19,10 +19,8 @@ int main(void)
       {
          printf("#");
       }
-   }
-   for (int i = 0; i < height-2; i++)
-   {
-      printf("\n");
+      if (i != height && i < height)
+         printf("\n");
    }
    for (int i = 0; i < height; i++)
    {
@@ -34,6 +32,6 @@ int main(void)
       {
          printf("#");
       }
-      printf("\n");
    }
+   printf("\n");
 }
