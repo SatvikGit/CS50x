@@ -13,6 +13,10 @@ int main(void)
    {
       for (int j = height -1; j >1; j--)
       {
+         printf("  ");
+      }
+      for (int k = -1; k < i; k++)
+      {
          printf("#");
       }
       printf("\n");
