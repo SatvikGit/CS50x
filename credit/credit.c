@@ -10,5 +10,6 @@ int main(void)
         ccnumber = get_long("Number: ");
     }
     while (false);
-    for ()
+    for (int i = 0; i < ccnumber; i = i+2)
+    
 }
