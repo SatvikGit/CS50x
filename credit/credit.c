@@ -7,7 +7,7 @@ int main(void)
     long ccnumber;
     do
     {
-        ccnumber = get_long("Credit Card number: ");
+        ccnumber = get_long("Number: ");
     }
     while ccnumber 
 }
