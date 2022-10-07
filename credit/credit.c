@@ -9,6 +9,6 @@ int main(void)
     {
         ccnumber = get_long("Number: ");
     }
-    while ccnumber != long
-    for 
+    while ccnumber != 
+    for
 }
