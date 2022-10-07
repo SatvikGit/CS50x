@@ -10,6 +10,8 @@ int main(void)
         ccnumber = get_long("Number: ");
     }
     while (false);
-    for (int i = 0; i < ccnumber; i = i+2)
-    
+    for (int i = ccnumber; i >= 0; i = i-2)
+    {
+        multiplied_by_2 = i*2
+    }
 }
