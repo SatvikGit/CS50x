@@ -7,7 +7,6 @@ int main(void)
     long ccnumber;
     do
     {
-        ccnumber = get_long("Number: ");
     }
     while (false);
 }
