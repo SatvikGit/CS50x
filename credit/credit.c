@@ -7,11 +7,7 @@ int main(void)
     long ccnumber;
     do
     {
-        ccnumber = get_long("Number: ")
+        ccnumber = get_long("Number: ");
     }
-    while (false);
-    for (i = 0; i < 16; i++)
-    {
-        
-    }
+    while (ccnumber <= 0);
 }
