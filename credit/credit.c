@@ -10,4 +10,5 @@ int main(void)
         ccnumber = get_long("Number: ");
     }
     while (ccnumber <= 0);
+    
 }
