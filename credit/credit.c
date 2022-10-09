@@ -10,11 +10,12 @@ int main(void)
         ccnumber = get_long("Number: ");
     }
     while (ccnumber <= 0);
+    int i = cardnumber
     int count = 0;
     // Counts the digits of Credit Card number
-    while (ccnumber > 0);
+    while (i > 0);
     {
-        ccnumber = ccnumber/10;
+        i = i/10;
         count++;
     }
     int sum1 = 0;
@@ -27,7 +28,7 @@ int main(void)
     // Luhn's Algorithm check
     else
     {
-        
+
     }
 
 
