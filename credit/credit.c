@@ -10,7 +10,7 @@ int main(void)
         ccnumber = get_long("Number: ");
     }
     while (ccnumber <= 0);
-    int i = ccnumber
+    int i = ccnumber;
     int count = 0;
     // Counts the digits of Credit Card number
     while (i > 0);
