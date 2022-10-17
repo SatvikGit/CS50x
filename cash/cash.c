@@ -49,20 +49,31 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // Calculate the number of quarters to be given
-    if (cents = 0);
+    if (cents );
     {
         quarters = 0
     }
     else
     {
-        for (int quarters = 1;cents >= 25 && cents <= 49; cents = cents + 25)
+        for (int i = 1;cents >= 25 && cents <= 49; cents = cents + 25)
+        {
+            quarters = i
+        }
     }
     return quarters;
 }
 
 int calculate_dimes(int cents)
 {
-    // TODO
+    // Calculate the number of dimes to be given
+    if (cents = 0)
+    {
+        dimes = 0
+    }
+    else
+    {
+        for (int j = 1;)
+    }
     return 0;
 }
 
