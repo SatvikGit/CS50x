@@ -28,8 +28,6 @@ int main(void)
     // Luhn's Algorithm check
     else
     {
-        
+        printf("% i",count);
     }
-
-
 }
