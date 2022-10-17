@@ -49,15 +49,15 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // Calculate the number of quarters to be given
-    if (cents );
+    if (cents < 25);
     {
-        quarters = 0
+        quarters = 0;
     }
     else
     {
         for (int i = 1;cents >= 25 && cents <= 49; cents = cents + 25)
         {
-            quarters = i
+            quarters = i;
         }
     }
     return quarters;
@@ -66,25 +66,43 @@ int calculate_quarters(int cents)
 int calculate_dimes(int cents)
 {
     // Calculate the number of dimes to be given
-    if (cents = 0)
+    if (cents < 10)
     {
-        dimes = 0
+        dimes = 0;
     }
     else
     {
-        for (int j = 1;)
+        for (int j = 1; cents >= 10 && cents <= 19; cents = cents + 10)
+        {
+            dimes = j;
+        }
     }
-    return 0;
+    return dimes;
 }
 
 int calculate_nickels(int cents)
 {
-    // TODO
-    return 0;
+    // Calculates the number of nickels to be given
+    if (cents < 5)
+    {
+        nickles = 0;
+    }
+    else
+    {
+        for (int k = 1; cents >= 5 && cents <= 9; cents = cents + 5)
+        {
+            nickels = k;
+        }
+    }
+    return nickels;
 }
 
 int calculate_pennies(int cents)
 {
-    // TODO
-    return 0;
+    // Calculates the number of pennies
+    for (int l = 1; cents >= 1 && cents <= 2; cents++)
+    {
+        pennies = l
+    }
+    return pennies;
 }
