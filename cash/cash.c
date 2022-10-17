@@ -53,7 +53,10 @@ int calculate_quarters(int cents)
     {
         number_quarters = 0
     }
-    else if (cents)
+    else
+    {
+        for (int i = 0;)
+    }
     return 0;
 }
 
