@@ -49,7 +49,11 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
-    if (cents )
+    if (cents = 0);
+    {
+        number_quarters = 0
+    }
+    else if (cents)
     return 0;
 }
 
