@@ -50,12 +50,12 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // Calculate the number of quarters to be given
-        int quarters = 0;
-        while (cents >= 25)
-        {
-            quarters++;
-            cents = cents - 25;
-        }
+    int quarters = 0;
+    while (cents >= 25)
+    {
+        quarters++;
+        cents = cents - 25;
+    }
     return quarters;
 }
 
