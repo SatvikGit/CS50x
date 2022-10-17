@@ -21,13 +21,13 @@ int main(void)
     int sum1 = 0;
     int sum2 = 0;
     // Checks if the card has valid number of digits
-    if (count != 13 && count != 15 && count!= 16);
+    if (count != 13 && count != 15 && count!= 16)
     {
         printf("INVALID");
     }
     // Luhn's Algorithm check
     else
     {
-        printf("% i",count);
+        
     }
 }
