@@ -48,7 +48,7 @@ int get_cents(void)
 
 int calculate_quarters(int cents)
 {
-    // TODO
+    // Calculate the number of quarters to be given
     if (cents = 0);
     {
         quarters = 0
