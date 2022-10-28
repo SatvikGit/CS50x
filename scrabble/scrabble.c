@@ -37,13 +37,9 @@ int compute_score(string word)
 {
     // Compute and return score for string
     int score = 0;
-    string letters = "abcdefghijklmnopqrstuvwxyz";
     for (int i = 0; i < strlen(word); i++)
     {
-        POINTS[i] = letters[i];
-        score = POINTS[i];
-        score += POINTS[i];
-        break;
+        score = score + word[i];
     }
     return score;
 }
