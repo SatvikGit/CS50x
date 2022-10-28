@@ -41,7 +41,7 @@ int compute_score(string word)
     for (int i =0; i < strlen(word); i++)
     {
         POINTS[] = letters[];
-        score = POINTS[]
+        score = POINTS[i];
     }
     return score;
 }
