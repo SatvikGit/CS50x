@@ -40,9 +40,10 @@ int compute_score(string word)
     string letters = "abcdefghijklmnopqrstuvwxyz";
     for (int i = 0; i < strlen(word); i++)
     {
-        letters[i] = POINTS[i];
-        score = letters[i];
-
+        POINTS[i] = letters[i];
+        score = POINTS[i];
+        score += POINTS[i];
+        break;
     }
     return score;
 }
