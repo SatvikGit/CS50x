@@ -39,7 +39,7 @@ int compute_score(string word)
     int score = 0;
     for (int i = 0; i < strlen(word); i++)
     {
-        score += word[i];
+        score += word[i] + 32;
     }
     return score;
 }
