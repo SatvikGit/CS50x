@@ -21,11 +21,11 @@ int main(void)
     // Print the winner
     if (score1 > score2)
     {
-        printf("%i\n",score1);
+        printf("1\n");
     }
     else if (score2 > score1)
     {
-        printf("%i\n",score2);
+        printf("2\n");
     }
     else
     {
