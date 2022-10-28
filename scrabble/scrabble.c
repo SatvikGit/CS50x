@@ -18,10 +18,30 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    // TODO: Print the winner
+    // Print the winner
+    if (score1 > score2)
+    {
+        printf("%i\n",score1);
+    }
+    else if (score2 > score1)
+    {
+        printf("%i\n",score2);
+    }
+    else
+    {
+        printf("%i, %i\n",score1, score2);
+    }
 }
 
 int compute_score(string word)
 {
-    // TODO: Compute and return score for string
+    // Compute and return score for string
+    int score = 0;
+    string letters[] = {a, b, c, d, e, f, g, h, i, j, k, l, m, n, l, n, o, p, q, r, s, t, u, v, w, x, y, z}
+    for (int i =0; i < strlen(word); i++)
+    {
+        POINTS[] = letters[];
+        score = POINTS[]
+    }
+    return score;
 }
