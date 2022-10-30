@@ -11,5 +11,8 @@ int main(void)
 
 int count_letters(string)
 {
-    for 
+    for (i = 0; i < strlen(Text); i++)
+    {
+        if 
+    }
 }
