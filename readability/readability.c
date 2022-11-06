@@ -11,15 +11,15 @@ int main(void)
 {
     float L;
     float S;
-    
+
     string text = get_string("Text: ");
 
     float l = count_letters(text);
     float w = count_words(text);
     float s = count_sentences(text);
 
-    L = l/w;
-    S = s/w;
+    L = (l/w) * 100;
+    S = (s/w) * 100;
 
     float index = 0.0588 * L - 0.296 * S - 15.6;
 
