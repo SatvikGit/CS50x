@@ -42,7 +42,7 @@ int main(void)
     printf("Grade %i\n", index);
 }
 
-// Counts the number of lee]tters
+// Counts the number of lee]tters]
 float count_letters(string text)
 {
     int letters = 0;
@@ -50,6 +50,7 @@ float count_letters(string text)
 
     for (i = 0; i <= strlen(text); i++)
     {
+        // Checks if text[i] is an alphabet
         if (isalpha(text[i]))
         {
             letters++;
@@ -58,6 +59,7 @@ float count_letters(string text)
     return letters;
 }
 
+// Counts the number of words
 float count_words(string text)
 {
     int words = 0;
@@ -65,6 +67,7 @@ float count_words(string text)
 
     for (j = 0; j < strlen(text); j++)
     {
+        // Checks if there is a space
         if isspace(text[j])
         {
             words++;
@@ -73,6 +76,7 @@ float count_words(string text)
     return words+1;
 }
 
+// Claculates the numver of setences
 float count_sentences(string text)
 {
     int sentences = 0;
@@ -80,6 +84,7 @@ float count_sentences(string text)
 
     for (k = 0; k < strlen(text); k++)
     {
+        // Checks if the word ends with . or ? or !
         if ((text[k]) == '.' || (text[k]) == '?' || (text[k]) == '!')
         {
             sentences++;
