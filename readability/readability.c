@@ -19,7 +19,7 @@ int count_letters(string text)
 
     for (i = 0; i <= strlen(text); i++)
     {
-        if (islower(text[i]) || isupper(text[i]))
+        if (isalpha(text[i]))
         {
             letters++;
         }
