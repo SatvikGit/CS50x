@@ -24,10 +24,7 @@ int main(void)
 
     int index = round(0.0588*L - 0.296*S - 15.8);
 
-    printf("%f\n", L);
-    printf("%f\n", w);
-    printf("%f\n", S);
-    printf("%i\n", index);
+    
 }
 
 float count_letters(string text)
