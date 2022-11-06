@@ -20,5 +20,5 @@ int count_letters(string text)
         if (islower(text[i]) || isupper(text[i]))
         return strlen(text);
     }
-    return strlen(text);
+    return i;
 }
