@@ -10,10 +10,15 @@ int main(void)
 {
     string text = get_string("Text: ");
     int number_letters = count_letters(text);
-    printf("%i\n", number_leters);
+    printf("%i\n", number_letters);
 }
 
 int count_letters(string text)
 {
-    if 
+    for (i = 0; i < strlen(text); i++)
+    {
+        if isalpha(text[i])
+        return i;
+    }
+    return strlen(text);
 }
