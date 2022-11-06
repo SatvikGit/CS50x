@@ -23,9 +23,9 @@ int main(void)
 
     float index = 0.0588 * L - 0.296 * S - 15.8;
 
-    printf("%f\n", l);
+    printf("%f\n", L);
     printf("%f\n", w);
-    printf("%f\n", s);
+    printf("%f\n", S);
     printf("%f\n", index);
 }
 
