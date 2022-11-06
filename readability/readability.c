@@ -23,11 +23,11 @@ int main(void)
     float s = count_sentences(text);
 
     // Calculates letters per 100 words and sentences per 100 words
-    L = (l/w) * 100;
-    S = (s/w) * 100;
+    L = (l / w) * 100;
+    S = (s / w) * 100;
 
     // Calculates index
-    int index = round(0.0588*L - 0.296*S - 15.8);
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
 
     // Prints the grade calculated
     if (index < 1)
@@ -41,7 +41,9 @@ int main(void)
     }
 
     else
-    printf("Grade %i\n", index);
+    {
+        printf("Grade %i\n", index);
+    }
 }
 
 // Counts the number of letters
@@ -75,7 +77,7 @@ float count_words(string text)
             words++;
         }
     }
-    return words+1;
+    return words + 1;
 }
 
 // Calculats the number of sentences
