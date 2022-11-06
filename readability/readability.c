@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
 float count_letters(string text);
 float count_words(string text);
@@ -21,12 +22,12 @@ int main(void)
     L = (l/w) * 100;
     S = (s/w) * 100;
 
-    float index = 0.0588*L - 0.296*S - 15.8;
+    int index = round(0.0588*L - 0.296*S - 15.8);
 
     printf("%f\n", L);
     printf("%f\n", w);
     printf("%f\n", S);
-    printf("%f\n", index);
+    printf("%i\n", index);
 }
 
 float count_letters(string text)
