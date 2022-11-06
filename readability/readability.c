@@ -14,10 +14,12 @@ int main(void)
 
 int count_letters(string text)
 {
-    if (islower(text) || isupper(text))
+    for (i = 0; i < strlen(text); i++)
     {
-        i = strlen(text)
-        return i
+        if (islower(text[i]) || isupper(text[i]))
+        {
+            return i;
+        }
     }
-    return i
+    return i;
 }
