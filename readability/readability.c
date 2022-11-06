@@ -30,5 +30,7 @@ int count_letters(string text)
 
 int count_words(string text)
 {
+    int words = 0;
+    int j = 0;
     
 }
