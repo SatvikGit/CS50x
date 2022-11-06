@@ -21,7 +21,7 @@ int main(void)
     L = (l/w) * 100;
     S = (s/w) * 100;
 
-    float index = 0.0588 * L - 0.296 * S - 15.6;
+    float index = 0.0588 * L - 0.296 * S - 15.8;
 
     printf("%f\n", l);
     printf("%f\n", w);
