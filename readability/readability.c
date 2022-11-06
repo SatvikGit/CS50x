@@ -4,12 +4,26 @@
 #include <string.h>
 
 int count_letters(string text);
-int i;
 
 int main(void)
 {
     string text = get_string("Text: ");
-    printf("%c\n", number_letters);
+    int l = count_letters(text);
+    printf("%i\n", l);
 }
 
+int count_letters(string text)
+{
+    int letters = 0;
+    int i = 0;
+
+    for (i = 0; i < strlen(text); i++)
+    {
+        if isalpha(text[i])
+        {
+            return letters;
+            letters++;
+        }
+    }
+    return letters;
 }
