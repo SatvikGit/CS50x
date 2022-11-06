@@ -4,6 +4,7 @@
 #include <string.h>
 #include <math.h>
 
+// Function declarations
 float count_letters(string text);
 float count_words(string text);
 float count_sentences(string text);
@@ -13,15 +14,18 @@ int main(void)
     float L;
     float S;
 
+    // Gets input from user
     string text = get_string("Text: ");
 
     float l = count_letters(text);
     float w = count_words(text);
     float s = count_sentences(text);
 
+    // Calculates letters per 100 words and sentences per 100 words
     L = (l/w) * 100;
     S = (s/w) * 100;
 
+    // Calculates index
     int index = round(0.0588*L - 0.296*S - 15.8);
 
     if (index < 1)
@@ -38,6 +42,7 @@ int main(void)
     printf("Grade %i\n", index);
 }
 
+// Counts the number of lee]tters
 float count_letters(string text)
 {
     int letters = 0;
