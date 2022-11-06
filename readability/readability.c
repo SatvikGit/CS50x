@@ -10,9 +10,12 @@ int count_sentences(string text);
 int main(void)
 {
     string text = get_string("Text: ");
+
     int l = count_letters(text);
     int w = count_words(text);
     int s = count_sentences(text);
+
+    index = 0.0588*l - 0.296*s
     printf("%i\n", l);
     printf("%i\n", w);
     printf("%i\n", s);
