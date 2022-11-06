@@ -11,6 +11,7 @@ float count_sentences(string text);
 
 int main(void)
 {
+    // Variable declarations
     float L;
     float S;
 
@@ -28,6 +29,7 @@ int main(void)
     // Calculates index
     int index = round(0.0588*L - 0.296*S - 15.8);
 
+    // Prints the grade calculated
     if (index < 1)
     {
         printf("Before Grade 1\n");
@@ -42,7 +44,7 @@ int main(void)
     printf("Grade %i\n", index);
 }
 
-// Counts the number of lee]tters]
+// Counts the number of letters
 float count_letters(string text)
 {
     int letters = 0;
@@ -76,7 +78,7 @@ float count_words(string text)
     return words+1;
 }
 
-// Claculates the numver of setences
+// Calculats the number of sentences
 float count_sentences(string text)
 {
     int sentences = 0;
