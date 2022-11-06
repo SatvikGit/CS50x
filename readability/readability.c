@@ -12,5 +12,3 @@ int main(void)
     i = strlen(text);
     printf("%i\n", i);
 }
-
-int count_letters(string text)
