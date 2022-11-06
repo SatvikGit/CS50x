@@ -42,5 +42,5 @@ int count_words(string text)
             words++;
         }
     }
-    return words;
+    return words+1;
 }
