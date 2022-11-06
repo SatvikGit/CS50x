@@ -3,25 +3,33 @@
 #include <ctype.h>
 #include <string.h>
 
-int count_letters(string text);
-int count_words(string text);
-int count_sentences(string text);
+float count_letters(string text);
+float count_words(string text);
+float count_sentences(string text);
 
 int main(void)
 {
+    float L;
+    float S;
+    
     string text = get_string("Text: ");
 
-    int l = count_letters(text);
-    int w = count_words(text);
-    int s = count_sentences(text);
+    float l = count_letters(text);
+    float w = count_words(text);
+    float s = count_sentences(text);
 
-    index = 0.0588*l - 0.296*s
-    printf("%i\n", l);
-    printf("%i\n", w);
-    printf("%i\n", s);
+    L = l/w;
+    S = s/w;
+
+    float index = 0.0588 * L - 0.296 * S - 15.6;
+
+    printf("%f\n", l);
+    printf("%f\n", w);
+    printf("%f\n", s);
+    printf("%f\n", index);
 }
 
-int count_letters(string text)
+float count_letters(string text)
 {
     int letters = 0;
     int i = 0;
@@ -36,7 +44,7 @@ int count_letters(string text)
     return letters;
 }
 
-int count_words(string text)
+float count_words(string text)
 {
     int words = 0;
     int j = 0;
@@ -51,7 +59,7 @@ int count_words(string text)
     return words+1;
 }
 
-int count_sentences(string text)
+float count_sentences(string text)
 {
     int sentences = 0;
     int k = 0;
