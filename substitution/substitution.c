@@ -24,5 +24,7 @@ int main(int argc, string argv[])
         {
             printf("Key must contain only letters\n")
         }
+
+        else if (argv[1][i])
     }
 }
