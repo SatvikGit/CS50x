@@ -55,20 +55,22 @@ int main(int argc, string argv[])
                 if isupper(plain[i])
                 {
                     plain[i] = alpha[j];
-                    upper_plain[i] = toupper(plain[i]);
+                    plain[i] = toupper(plain[i]);
                 }
 
                 else if islower(plain[i])
                 {
                     plain[i] = alpha[j];
-                    lower_plain[i] = tolower(plain[i]);
+                    plain[i] = tolower(plain[i]);
                 }
             }
 
             else
             {
-                
+                printf("%c", plain[i]);
             }
+
+            printf("%c", plain[i]);
         }
     }
 
