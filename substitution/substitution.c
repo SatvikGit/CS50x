@@ -5,6 +5,7 @@
 
 int main(int argc, string argv[])
 {
+    int N = 26;
     string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     if (argc != 2)
