@@ -43,6 +43,7 @@ int main(int argc, string argv[])
     }
 
     string plain = get_string("plaintext: ");
+    printf("ciphertext: ");
     int lenplain = strlen(plain);
 
     for (int i = 0; i < lenplain; i++)
@@ -51,7 +52,7 @@ int main(int argc, string argv[])
         {
             if isupper(plain[i])
             {
-                cipher[i] 
+                if 
             }
         }
     }
