@@ -19,7 +19,7 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < 26; i++)
     {
-        if (int argv[1][i] <= 65 && int argv[1][i] >= 90 || int argv[1][i] <= 97 && int argv[1][i] >= 122)
+        if ((argv[1][i] <= 'A' && argv[1][i] >= 'Z') || (argv[1][i] <= 'a' && argv[1][i] >= 'z'))
         {
             printf("Key must contain only letters\n");
         }
@@ -34,7 +34,7 @@ int main(int argc, string argv[])
     {
         for (int k = (j + 1); k < 26; k++)
         {
-            if argv[1][j] == argv[1][k]
+            if (argv[1][j] == argv[1][k])
             {
                 printf("There can be no duplicate alphabets in the key\n");
             }
@@ -49,15 +49,15 @@ int main(int argc, string argv[])
     {
         for (int j = 0; j < 26; j++)
         {
-            if isalpha(plain[i])
+            if (isalpha(plain[i]))
             {
-                if isupper(plain[i])
+                if (isupper(plain[i]))
                 {
                     plain[i] = alpha[j];
                     plain[i] = toupper(plain[i]);
                 }
 
-                else if islower(plain[i])
+                else if (islower(plain[i]))
                 {
                     plain[i] = alpha[j];
                     plain[i] = tolower(plain[i]);
