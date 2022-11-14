@@ -6,7 +6,6 @@
 int main(int argc, string argv[])
 {
     const string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    cipher[];
 
     if (argc != 2)
     {
