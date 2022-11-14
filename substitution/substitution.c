@@ -5,7 +5,8 @@
 
 int main(int argc, string argv[])
 {
-    const string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    cipher[];
 
     if (argc != 2)
     {
@@ -48,7 +49,10 @@ int main(int argc, string argv[])
     {
         for (int j = 0; j < 26; j++)
         {
-            if
+            if isupper(plain[i])
+            {
+                cipher[i] 
+            }
         }
     }
 
