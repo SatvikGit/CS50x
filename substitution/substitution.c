@@ -42,5 +42,7 @@ int main(int argc, string argv[])
         }
     }
 
-    string plain
+    string plain = get_string("plaintext: ");
+    int lenplain = strlen(plain);
+    
 }
