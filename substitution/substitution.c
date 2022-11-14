@@ -22,9 +22,14 @@ int main(int argc, string argv[])
     {
         if (int argv[1][i] <= 65 && int argv[1][i] >= 90 || int argv[1][i] <= 97 && int argv[1][i] >= 122)
         {
-            printf("Key must contain only letters\n")
+            printf("Key must contain only letters\n");
         }
 
-        else if (argv[1][i])
+        else if (islower(argv[1][i]))
+        {
+            argv[1][i] = toupper(argv[1][i]);
+        }
     }
+
+    
 }
