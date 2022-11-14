@@ -6,7 +6,7 @@
 int main(int argc, string argv[])
 {
     int i;
-    APLHA[] = [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+    const ALPHA[] = [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
 
     if (argc != 2)
     {
@@ -45,4 +45,5 @@ int main(int argc, string argv[])
     string plain = get_string("plaintext: ");
     int lenplain = strlen(plain);
     
+
 }
