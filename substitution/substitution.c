@@ -5,7 +5,7 @@
 
 int main(int argc, string argv[])
 {
-    const string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     if (argc != 2)
     {
@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     else if (strlen(argv[1]) != 26)
     {
         printf("Key must contain 26 characters\n");
-        return 1;
+        return 2;
     }
 
     for (int i = 0; i < 26; i++)
@@ -24,7 +24,7 @@ int main(int argc, string argv[])
         if ((argv[1][i] <= 'A' && argv[1][i] >= 'Z') || (argv[1][i] <= 'a' && argv[1][i] >= 'z'))
         {
             printf("Key must contain only letters\n");
-            return 1;
+            return 3;
         }
 
         else if (islower(argv[1][i]))
@@ -40,7 +40,7 @@ int main(int argc, string argv[])
             if (argv[1][j] == argv[1][k])
             {
                 printf("There can be no duplicate alphabets in the key\n");
-                return 1;
+                return 4;
             }
         }
     }
@@ -82,7 +82,7 @@ int main(int argc, string argv[])
 
             cipher[lenplain] = '\0';
 
-            printf("ciphertext: %s", cipher);
+            printf("ciphertext: %s\n", cipher);
             return 0;
         }
 }
