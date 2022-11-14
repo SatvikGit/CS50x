@@ -36,6 +36,9 @@ int main(int argc, string argv[])
         for (int k = (j + 1); k < 26; k++)
         {
             if argv[1][j] == argv[1][k]
+            {
+                printf("There can be no duplicate alphabets in the key\n");
+            }
         }
     }
 }
