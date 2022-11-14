@@ -7,4 +7,16 @@ int main(int argc, string argv[])
 {
     int i;
     APLHA[] = [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+
+    if (argc != 2)
+    {
+        printf("Usage: ./substitution key\n");
+    }
+
+    else if (strlen(argv[1]) != 26)
+    {
+        printf("Key must contain 26 characters\n");
+    }
+
+    
 }
