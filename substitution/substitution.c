@@ -50,16 +50,24 @@ int main(int argc, string argv[])
     {
         for (int j = 0; j < 26; j++)
         {
-            if isupper(plain[i])
+            if isalpha(plain[i])
             {
-                plain[i] = alpha[j];
-                upper_plain[i] = toupper(plain[i]);
+                if isupper(plain[i])
+                {
+                    plain[i] = alpha[j];
+                    upper_plain[i] = toupper(plain[i]);
+                }
+
+                else if islower(plain[i])
+                {
+                    plain[i] = alpha[j];
+                    lower_plain[i] = tolower(plain[i]);
+                }
             }
 
-            else if islower(plain[i])
+            else
             {
-                plain[i] = alpha[j];
-                lower_plain[i] = tolower(plain[i]);
+                
             }
         }
     }
