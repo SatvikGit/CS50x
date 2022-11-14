@@ -5,8 +5,7 @@
 
 int main(int argc, string argv[])
 {
-    int i;
-    const ALPHA[] = [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+    const string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     if (argc != 2)
     {
@@ -49,7 +48,7 @@ int main(int argc, string argv[])
     {
         for (int j = 0; j < 26; j++)
         {
-            if 
+            if
         }
     }
 
