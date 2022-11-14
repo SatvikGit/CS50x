@@ -52,7 +52,13 @@ int main(int argc, string argv[])
         {
             if isupper(plain[i])
             {
-                if 
+                plain[i] = alpha[j];
+                upper_plain[i] = toupper(plain[i])
+            }
+
+            else if islower(plain[i])
+            {
+                plain[i] = alpha[]
             }
         }
     }
