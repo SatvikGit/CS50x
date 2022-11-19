@@ -3,7 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 
-int N = 26;
 string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 int main(int argc, string argv[])
@@ -40,7 +39,7 @@ int main(int argc, string argv[])
 
     string plain = get_string("plaintext: ");
     {
-        
+        printf("ciphertext: ");
     }
     int lenplain = strlen(plain);
     char cipher[lenplain + 1];
