@@ -14,7 +14,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    int letter[N];
+    int letters[N];
     for (int i = 0; i < strlen(argv[1]); i++)
     {
         if ((argv[1][i] < 'A' && argv[1][i] > 'Z') || (argv[1][i] < 'a' && argv[1][i] > 'z'))
