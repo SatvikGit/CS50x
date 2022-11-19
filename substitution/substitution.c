@@ -31,15 +31,14 @@ int main(int argc, string argv[])
 
     for (int j = 0; j < N; j++)
     {
-        for (int k = (j + 1); k < N; k++)
-        {
-            if (argv[j] == argv[k])
+            if (argv[1][i] == letters[j])
             {
                 printf("There can be no duplicate alphabets in the key\n");
                 return 3;
             }
-        }
     }
+    letters[i] = argv[1][i];
+}
 
     string plain = get_string("plaintext: ");
     int lenplain = strlen(plain);
