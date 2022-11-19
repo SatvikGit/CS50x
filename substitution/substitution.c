@@ -36,9 +36,10 @@ int main(int argc, string argv[])
             if (argv[j] == argv[k])
             {
                 printf("There can be no duplicate alphabets in the key\n");
-                return 4;
+                return 3;
             }
         }
+        letters[i] = argv[1][i];
     }
 
     string plain = get_string("plaintext: ");
@@ -47,9 +48,9 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < lenplain; i++)
     {
-        if (isupper(plain[i])!=0)
+        if (isupper(plain[i]) != 0)
             {
-                for (int j = 0; j < 26; j++)
+                for (int j = 0; j < N; j++)
                 {
                     if (plain[i] == alpha[j])
                     {
@@ -59,7 +60,7 @@ int main(int argc, string argv[])
                 }
             }
 
-        else if (islower(plain[i])!=0)
+        else if (islower(plain[i]) != 0)
             {
                 for (int j = 0; j < strlen(alpha); j++)
                     {
