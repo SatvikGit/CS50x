@@ -14,18 +14,13 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    else if (strlen(argv[1]) != 26)
-    {
-        printf("Key must contain 26 characters\n");
-        return 2;
-    }
-
+    int letter[N];
     for (int i = 0; i < strlen(argv[1]); i++)
     {
         if ((argv[1][i] < 'A' && argv[1][i] > 'Z') || (argv[1][i] < 'a' && argv[1][i] > 'z'))
         {
             printf("Key must contain only letters\n");
-            return 3;
+            return 2;
         }
 
         else if (islower(argv[1][i]))
