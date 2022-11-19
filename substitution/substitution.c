@@ -3,11 +3,11 @@
 #include <string.h>
 #include <ctype.h>
 
+int N = 26;
+string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 int main(int argc, string argv[])
 {
-    int N = 26;
-    string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
     if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
@@ -20,9 +20,9 @@ int main(int argc, string argv[])
         return 2;
     }
 
-    for (int i = 0; i < 26; i++)
+    for (int i = 0; i < strlen(argv[1]); i++)
     {
-        if ((argv[1][i] <= 'A' && argv[1][i] >= 'Z') || (argv[1][i] <= 'a' && argv[1][i] >= 'z'))
+        if ((argv[1][i] < 'A' && argv[1][i] > 'Z') || (argv[1][i] < 'a' && argv[1][i] > 'z'))
         {
             printf("Key must contain only letters\n");
             return 3;
@@ -52,7 +52,7 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < lenplain; i++)
     {
-        if (isupper(plain[i]) != 0)
+        if (isupper(plain[i])!=0)
             {
                 for (int j = 0; j < 26; j++)
                 {
@@ -64,7 +64,7 @@ int main(int argc, string argv[])
                 }
             }
 
-        else if (islower(plain[i]) != 0)
+        else if (islower(plain[i])!=0)
             {
                 for (int j = 0; j < strlen(alpha); j++)
                     {
