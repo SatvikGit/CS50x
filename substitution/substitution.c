@@ -29,7 +29,7 @@ int main(int argc, string argv[])
         }
     }
 
-    for (int j = 0; j < 26; j++)
+    for (int j = 0; j < N; j++)
     {
         for (int k = (j + 1); k < 26; k++)
         {
