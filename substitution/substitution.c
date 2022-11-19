@@ -41,18 +41,29 @@ int main(int argc, string argv[])
     {
         printf("ciphertext: ");
     }
-    int lenplain = strlen(plain);
-    char cipher[lenplain + 1];
 
-    for (int i = 0; i < lenplain; i++)
+    for (int i = 0; i < strlen(plain); i++)
     {
-        if (isupper(plain[i]) != 0)
+        for (int j = 0; j < 26; j++)
+        {
+            if (isalpha(plain[i]))
             {
-                for (int j = 0; j < N; j++)
+                if (islower(plain[i]))
                 {
-                    if (plain[i] == alpha[j])
+                    if plain[i] == alpha[j]
                     {
-                        cipher[i] = argv[1][j];
+                        plain[i] = tolower(argv[1][j]);
+                    }
+                }
+
+                else if (isupper(plain[i]))
+                {
+                    if (alpha[j] == tolower(plain[i]))
+                    {
+                        plain[i] = toupper(argv[1][j]);
+                    }
+                }
+                cipher[i] = argv[1][j];
                         break;
                     }
                 }
