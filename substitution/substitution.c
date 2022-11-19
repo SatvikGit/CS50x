@@ -14,32 +14,34 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    int letters[N];
-    for (int i = 0; i < strlen(argv[1]); i++)
+    if (strlen(argv[1]) != 26)
     {
-        if ((argv[1][i] < 'A' && argv[1][i] > 'Z') || (argv[1][i] < 'a' && argv[1][i] > 'z'))
-        {
-            printf("Key must contain only letters\n");
-            return 2;
-        }
-
-        else if (islower(argv[1][i]))
-        {
-            argv[1][i] = toupper(argv[1][i]);
-        }
-
-    for (int j = 0; j < N; j++)
-    {
-            if (argv[1][i] == letters[j])
-            {
-                printf("There can be no duplicate alphabets in the key\n");
-                return 3;
-            }
+        printf("Key must contain only 26 characters\n");
+        return 1;
     }
-        letters[i] = argv[1][i];
+
+    int matches = 0;
+    for (int i = 0; i < 26; i++)
+    {
+        for (int j = 0; argv[1][j] != '\0'; j++)
+        {
+            if (argv[1][j] = argv[1][i])
+            {
+                matches++
+            }
+        }
+    }
+
+    if (matches != 26)
+    {
+        printf("There can be no duplicate alphabets in the key\n");
+        return 1;
     }
 
     string plain = get_string("plaintext: ");
+    {
+        
+    }
     int lenplain = strlen(plain);
     char cipher[lenplain + 1];
 
