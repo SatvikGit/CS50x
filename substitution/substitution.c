@@ -27,7 +27,6 @@ int main(int argc, string argv[])
         {
             argv[1][i] = toupper(argv[1][i]);
         }
-    }
 
     for (int j = 0; j < N; j++)
     {
@@ -37,8 +36,8 @@ int main(int argc, string argv[])
                 return 3;
             }
     }
-    letters[i] = argv[1][i];
-}
+        letters[i] = argv[1][i];
+    }
 
     string plain = get_string("plaintext: ");
     int lenplain = strlen(plain);
