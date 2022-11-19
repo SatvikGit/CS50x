@@ -24,9 +24,9 @@ int main(int argc, string argv[])
     {
         for (int j = 0; argv[1][j] != '\0'; j++)
         {
-            if (argv[1][j] = argv[1][i])
+            if (argv[1][j] == argv[1][i])
             {
-                matches++
+                matches++;
             }
         }
     }
@@ -50,7 +50,7 @@ int main(int argc, string argv[])
             {
                 if (islower(plain[i]))
                 {
-                    if plain[i] == alpha[j]
+                    if (plain[i] == alpha[j])
                     {
                         plain[i] = tolower(argv[1][j]);
                     }
@@ -63,32 +63,14 @@ int main(int argc, string argv[])
                         plain[i] = toupper(argv[1][j]);
                     }
                 }
-                cipher[i] = argv[1][j];
-                        break;
-                    }
-                }
             }
-
-        else if (islower(plain[i]) != 0)
-            {
-                for (int j = 0; j < strlen(alpha); j++)
-                    {
-                        if (plain[i] == tolower(alpha[j]))
-                        {
-                            cipher[i] = tolower(argv[1][j]);
-                            break;
-                        }
-                    }
-            }
-
-            else
-            {
-                cipher[i] = plain[i];
-            }
-
-            cipher[lenplain] = '\0';
-
-            printf("ciphertext: %s\n", cipher);
-            return 0;
         }
+
+        if (!isalpha(plain[i]))
+        {
+            printf("%c", plain[i]);
+        }
+    }
+        printf("ciphertext: %c\n", plain[i]);
+        return 0;
 }
