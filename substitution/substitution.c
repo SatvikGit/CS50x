@@ -39,7 +39,6 @@ int main(int argc, string argv[])
                 return 3;
             }
         }
-        letters[i] = argv[1][i];
     }
 
     string plain = get_string("plaintext: ");
