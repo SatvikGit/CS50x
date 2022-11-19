@@ -70,7 +70,7 @@ int main(int argc, string argv[])
         {
             printf("%c", plain[i]);
         }
-    }
         printf("ciphertext: %c\n", plain[i]);
         return 0;
+    }
 }
