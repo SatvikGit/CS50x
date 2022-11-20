@@ -60,7 +60,7 @@ int main(int argc, string argv[])
         }
     }
 
-    // Collects input fron user
+    // Collects input from user
     string plain = get_string("plaintext: ");
     int lenplain = strlen(plain);
     char cipher[lenplain + 1];
@@ -98,6 +98,7 @@ int main(int argc, string argv[])
                 cipher[i] = plain[i];
             }
     }
+
 
     cipher[lenplain] = '\0';
 
