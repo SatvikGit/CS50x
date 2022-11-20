@@ -51,7 +51,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Converts arguemt
+    // Converts arguements to uppertext
     for (int i = 0; i < 26; i++)
     {
         if (islower(argv[1][i]))
@@ -60,12 +60,14 @@ int main(int argc, string argv[])
         }
     }
 
+    // Collects input fron user
     string plain = get_string("plaintext: ");
     int lenplain = strlen(plain);
     char cipher[lenplain + 1];
 
     for (int i = 0; i < lenplain; i++)
     {
+            // Ciphers uppertext characters
             if (isupper(plain[i]) != 0)
             {
                 for (int j = 0; j < 26; j++)
@@ -78,6 +80,7 @@ int main(int argc, string argv[])
                 }
             }
 
+            // Ciphers lowetext characters
             else if (islower(plain[i]) != 0)
             {
                 for (int j = 0; j < 26; j++)
