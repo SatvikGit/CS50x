@@ -47,36 +47,16 @@ int main(int argc, string argv[])
 
     string plain = get_string("plaintext: ");
     int lenplain = strlen(plain);
+    char cipher[lenplain + 1];
 
-    for (int i = 0; i < strlen(plain); i++)
+    for (int i = 0; i < lenplain, i++)
     {
-        for (int j = 0; j < 26; j++)
+        for (int j = 0; i < 26; j++)
         {
-            if (isalpha(plain[i]))
+            if (isupper(argv[1][i]))
             {
-                if (islower(plain[i]))
-                {
-                    if (plain[i] == alpha[j])
-                    {
-                        plain[i] = tolower(argv[1][j]);
-                    }
-                }
-
-                else if (isupper(plain[i]))
-                {
-                    if (alpha[j] == tolower(plain[i]))
-                    {
-                        plain[i] = toupper(argv[1][j]);
-                    }
-                }
+                argv[1][i] = isupper(argv[1][i]
             }
         }
-
-        if (!isalpha(plain[i]))
-        {
-            printf("%c", plain[i]);
-        }
-        printf("ciphertext: %c\n", plain[i]);
-        return 0;
     }
 }
