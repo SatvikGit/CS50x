@@ -19,14 +19,6 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    for (int i = 0; i < 26; i++)
-    {
-        if (islower(argv[1][i]))
-        {
-            argv[1][i] = toupper(argv[1][i]);
-        }
-    }
-
     int matches = 0;
     for (int i = 0; i < 26; i++)
     {
@@ -45,10 +37,16 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    string plain = get_string("plaintext: ");
+    for (int i = 0; i < 26; i++)
     {
-        printf("ciphertext: ");
+        if (islower(argv[1][i]))
+        {
+                      argv[1][i] = toupper(argv[1][i]);
+        }
     }
+
+    string plain = get_string("plaintext: ");
+    int lenplain = strlen(plain);
 
     for (int i = 0; i < strlen(plain); i++)
     {
