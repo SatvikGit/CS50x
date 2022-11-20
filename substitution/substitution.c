@@ -56,7 +56,7 @@ int main(int argc, string argv[])
     {
         if (islower(argv[1][i]))
         {
-                      argv[1][i] = toupper(argv[1][i]);
+            argv[1][i] = toupper(argv[1][i]);
         }
     }
 
@@ -67,36 +67,36 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < lenplain; i++)
     {
-            // Ciphers uppertext characters
-            if (isupper(plain[i]) != 0)
+        // Ciphers uppertext characters
+        if (isupper(plain[i]) != 0)
+        {
+            for (int j = 0; j < 26; j++)
             {
-                for (int j = 0; j < 26; j++)
+                if (plain[i] == alpha[j])
                 {
-                    if (plain[i] == alpha[j])
-                    {
-                        cipher[i] = argv[1][j];
-                        break;
-                    }
+                    cipher[i] = argv[1][j];
+                    break;
                 }
             }
+        }
 
-            // Ciphers lowetext characters
-            else if (islower(plain[i]) != 0)
+        // Ciphers lowertext characters
+        else if (islower(plain[i]) != 0)
+        {
+            for (int j = 0; j < 26; j++)
             {
-                for (int j = 0; j < 26; j++)
+                if (plain[i]  == tolower(alpha[j]))
                 {
-                    if (plain[i]  == tolower(alpha[j]))
-                    {
-                        cipher[i] = tolower(argv[1][j]);
-                        break;
-                    }
+                    cipher[i] = tolower(argv[1][j]);
+                    break;
                 }
             }
+        }
 
-            else
-            {
-                cipher[i] = plain[i];
-            }
+        else
+        {
+            cipher[i] = plain[i];
+        }
     }
 
     // Adds null character to end of ciphertext
