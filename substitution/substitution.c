@@ -99,9 +99,10 @@ int main(int argc, string argv[])
             }
     }
 
-
+    // Adds null character to end of ciphertext
     cipher[lenplain] = '\0';
 
+    // Prints the ciphertext
     printf("ciphertext: %s\n", cipher);
     return 0;
 }
