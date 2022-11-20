@@ -3,22 +3,26 @@
 #include <string.h>
 #include <ctype.h>
 
+// Declares string of alphabets
 string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 int main(int argc, string argv[])
 {
+    // Checks if user provided right number of arguements
     if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
         return 1;
     }
 
+    // Checks if user provided 26 characters
     if (strlen(argv[1]) != 26)
     {
         printf("Key must contain only 26 characters\n");
         return 1;
     }
 
+    // Checks if user has provided only alphabetical characters
     for (int i = 0; i < 26; i++)
     {
         if (!isalpha(argv[1][i]))
@@ -27,6 +31,7 @@ int main(int argc, string argv[])
             return 1;
         }
     }
+
     int matches = 0;
     for (int i = 0; i < 26; i++)
     {
@@ -39,12 +44,14 @@ int main(int argc, string argv[])
         }
     }
 
+    // Checks for duplicate characters
     if (matches != 26)
     {
         printf("There can be no duplicate alphabets in the key\n");
         return 1;
     }
 
+    // Converts arguemt
     for (int i = 0; i < 26; i++)
     {
         if (islower(argv[1][i]))
