@@ -19,6 +19,14 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    for (int i = 0; i < 26; i++)
+    {
+        if (!isalpha(argv[1][i]))
+        {
+            printf("Key must contain only alphabetical characters\n");
+            return 1;
+        }
+    }
     int matches = 0;
     for (int i = 0; i < 26; i++)
     {
