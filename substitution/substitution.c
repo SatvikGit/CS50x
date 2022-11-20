@@ -19,6 +19,11 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    if (islower(argv[1][i]))
+    {
+        argv[1][i] = toupper(argv[1][i]);
+    }
+
     int matches = 0;
     for (int i = 0; i < 26; i++)
     {
