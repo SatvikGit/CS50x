@@ -10,4 +10,6 @@ How do you know?: Sort2 uses Merge sort because it takes least time in all 3 cas
 
 sort3 uses: Selection Sort
 
-How do you know?: Sort3 uses Selection sort because it t
+How do you know?: Sort3 uses Selection sort because it takes almost equal time in worst case scenario as compared to Bubble sort which
+                  is in order of n squared and also takes approximately same time in best case scenario. This indicates that it is
+                  Selection sort.
