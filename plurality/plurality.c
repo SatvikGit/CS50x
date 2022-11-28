@@ -71,7 +71,8 @@ bool vote(string name)
     {
         if (name == argv[i])
         {
-            
+            candidate[i].votes++;
+            return true;
         }
     }
     return false;
