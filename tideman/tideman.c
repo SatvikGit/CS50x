@@ -135,6 +135,16 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     // TODO
+    for (int i = 0; i < voter_count; i++)
+    {
+        for (int j = 0; j < voter_count; j++)
+        {
+            if (ranks[i] != ranks[j])
+            {
+                pairs[]
+            }
+        }
+    }
     return;
 }
 
