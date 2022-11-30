@@ -141,7 +141,9 @@ void add_pairs(void)
         {
             if (ranks[i] != ranks[j])
             {
-                pairs[]
+                pairs[i].winner = ranks[i];
+                pairs[j].winner = ranks[j];
+                return;
             }
         }
     }
