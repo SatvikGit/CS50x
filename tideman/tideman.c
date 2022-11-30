@@ -135,6 +135,7 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     // TODO
+    int len_pairs = 0;
     for (int i = 0; i < voter_count; i++)
     {
         for (int j = 0; j < voter_count; j++)
@@ -143,17 +144,21 @@ void add_pairs(void)
             {
                 pairs[i].winner = ranks[i];
                 pairs[j].winner = ranks[j];
-                return 0;
+
+                for (int k = 0; k < pairs[i][j]; k++)
+                {
+                    len_pairs++;
+                }
+                return;
             }
         }
     }
-    return;
 
-    int len_pairs = 0;
-    for (int i = 0; i < voter_count; i++)
+    for (int i = 0; i <= len_pairs; i++)
     {
-        
+        pair_count = 
     }
+    return;
 }
 
 // Sort pairs in decreasing order by strength of victory
