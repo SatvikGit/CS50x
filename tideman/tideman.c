@@ -143,11 +143,17 @@ void add_pairs(void)
             {
                 pairs[i].winner = ranks[i];
                 pairs[j].winner = ranks[j];
-                pair_count = 
+                return 0;
             }
         }
     }
     return;
+
+    int len_pairs = 0;
+    for (int i = 0; i < voter_count; i++)
+    {
+        
+    }
 }
 
 // Sort pairs in decreasing order by strength of victory
