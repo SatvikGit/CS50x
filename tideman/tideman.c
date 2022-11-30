@@ -143,7 +143,7 @@ void add_pairs(void)
             {
                 pairs[i].winner = ranks[i];
                 pairs[j].winner = ranks[j];
-                return;
+                pair_count = 
             }
         }
     }
