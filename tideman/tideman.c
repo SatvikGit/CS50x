@@ -156,7 +156,8 @@ void add_pairs(void)
 
     for (int i = 0; i <= len_pairs; i++)
     {
-        pair_count = 
+        pair_count = len_pairs;
+        return;
     }
     return;
 }
