@@ -201,7 +201,7 @@ void print_winner(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        for (int j = i+1; j < candidate_count; j++)
+        for (int j = i+1; j < pair_count; j++)
         {
             printf("%s", locked[0][1]);
             return;
