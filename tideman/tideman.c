@@ -169,7 +169,10 @@ void sort_pairs(void)
         {
             for (int k = j+1; k < pair_count; k++)
             {
-                if (strength[k])
+                if (strength[j] < strength[k])
+                {
+                    max_strength = strength
+                }
             }
         }
     }
