@@ -116,9 +116,9 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // TODO
-    for (int i = 0; i < voter_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 1; j <= voter_count; j++)
+        for (int j = 1; j <= candidate_count; j++)
         {
             preferences[ranks[i]][ranks[j]]++;
             return;
@@ -163,7 +163,7 @@ void sort_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        strength[i] = pairs[i].winner;
+        int strength[i] = pairs[i].winner;
         for (int j = i+1; j < pair_count; j++)
         {
             if (strength[i] < strength[j])
