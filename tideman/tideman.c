@@ -198,5 +198,6 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
+    printf("%s", )
     return;
 }
