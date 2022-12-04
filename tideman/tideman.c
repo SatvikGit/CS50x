@@ -167,7 +167,10 @@ void sort_pairs(void)
         strength[i] = pairs[i].winner - pairs[i].loser;
         for (int j = 0; i < pair_count; i++)
         {
-            
+            for (int k = j+1; k < pair_count; k++)
+            {
+                if (strength[k])
+            }
         }
     }
 
