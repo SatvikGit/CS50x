@@ -164,16 +164,8 @@ void sort_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        strength[i] = pairs[i].winner - pairs[i].loser;
-        for (int j = i+1; i < pair_count; i++)
-        {
-            if (strength[i] < strength[j])
-            {
-                max_strength = strength[i];
-                strength[i] = strength[j];
-                strength[j] = max_strength;
-            }
-        }
+        strength[i] = pairs[i].winner;
+        
     }
     return;
 }
