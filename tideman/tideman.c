@@ -160,8 +160,14 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    int strength = pairs[pair_count].winner - pairs[pair_count].loser;
-    for 
+    for (int i = 0; i < pair_count; i++)
+    {
+        for (int j = 0; j < pair_count; j++)
+        {
+            int strength = pairs[i].winner - pairs[i].loser;
+            
+        }
+    }
     return;
 }
 
