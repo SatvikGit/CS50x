@@ -165,20 +165,16 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         strength[i] = pairs[i].winner - pairs[i].loser;
-        for (int j = 0; i < pair_count; i++)
+        for (int j = i+1; i < pair_count; i++)
         {
-            for (int k = j+1; k < pair_count; k++)
+            if (strength[i] < strength[j])
             {
-                if (strength[j] < strength[k])
-                {
-                    max_strength = strength[j];
-                    strength[j] = strength[k];
-                    strength[k] = max_strength;
-                }
+                max_strength = strength[i];
+                strength[i] = strength[j];
+                strength[j] = max_strength;
             }
         }
     }
-
     return;
 }
 
