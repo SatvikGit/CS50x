@@ -157,15 +157,23 @@ void add_pairs(void)
 }
 
 // Sort pairs in decreasing order by strength of victory
-int max_strength = 0;
-int strength[pair_count];
+int max_pair = 0;
 void sort_pairs(void)
 {
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
         strength[i] = pairs[i].winner;
-        
+        for (int j = i+1; j < pair_count; j++)
+        {
+            if (strength[i] < strength[j])
+            {
+                max_pair = pairs[i];
+                pairs[i] = pairs[j];
+                pairs[j] = max_pair;
+                return;
+            }
+        }
     }
     return;
 }
