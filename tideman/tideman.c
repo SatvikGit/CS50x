@@ -180,6 +180,7 @@ bool cycle(int end, int cycle_start)
     {
         if (locked[end][i])
         {
+            if (cycle(i, cycle_start))
             return true;
         }
     }
