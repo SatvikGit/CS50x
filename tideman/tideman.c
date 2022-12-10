@@ -147,7 +147,6 @@ void add_pairs(void)
             }
         }
     }
-    return;
 }
 
 // Sort pairs in decreasing order by strength of victory
@@ -155,15 +154,17 @@ void sort_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        for (int j = 0; j < pair_count- i - 1; j++)
+        int max = i;
+        for (int j = i; j < pair_count; j++)
         {
-            if ((preferences[pairs[j].winner][pairs[j].loser]) < (preferences[pairs[j+1].winner][pairs[j+1].loser]))
+            if ((preferences[pairs[j].winner][pairs[j].loser]) > (preferences[pairs[max].winner][pairs[max].loser]))
             {
-                pair temp = pairs[j];
-                pairs[j] = pairs[j+1];
-                pairs[j+1] = temp;
+                max = j;
             }
         }
+        pair temp = pairs[i];
+        pairs[i] = pairs[max];
+        pairs[max] = temp;
     }
     return;
 }
@@ -179,12 +180,9 @@ bool cycle(int end, int cycle_start)
     // Loops for recursive case
     for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[end][i])
+        if (locked[end][i] && cycle(i, cycle_start))
         {
-            if (cycle(i, cycle_start))
-            {
-                return true;
-            }
+            return true;
         }
     }
     return false;
@@ -208,18 +206,19 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        int false_count = 0;
+        bool loser = false;
         for (int j = 0; j < candidate_count; j++)
         {
             if (locked[j][i]  == false)
             {
-                false_count++;
-                
-                if (false_count == candidate_count)
-                {
-                    printf("%s\n", candidates[i]);
-                }
+                loser = true;
+                break;
             }
+        }
+
+        if (!loser)
+        {
+            printf("%s\n", candidates[i]);
         }
     }
     return;
