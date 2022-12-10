@@ -31,6 +31,7 @@ bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
+bool cycle(int end, int cycle_start);
 void lock_pairs(void);
 void print_winner(void);
 
@@ -100,7 +101,6 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // TODO
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(name, candidates[i]) == 0)
@@ -115,13 +115,11 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 1; j <= candidate_count; j++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
             preferences[ranks[i]][ranks[j]]++;
-            return;
         }
     }
     return;
@@ -130,10 +128,9 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; i < candidate_count; j++)
+        for (int j = i + 1; i < candidate_count; j++)
         {
             if (preferences[i][j] > preferences[j][i])
             {
@@ -141,7 +138,6 @@ void add_pairs(void)
                 pairs[pair_count].loser = j;
 
                 pair_count++;
-                return;
             }
             else if (preferences[i][j] < preferences[j][i])
             {
@@ -149,47 +145,60 @@ void add_pairs(void)
                 pairs[pair_count].loser = i;
 
                 pair_count++;
-                return;
-            }
-        }
-    }
-
-}
-
-// Sort pairs in decreasing order by strength of victory
-int max_pair = 0;
-int strength[];
-void sort_pairs(void)
-{
-    // TODO
-    for (int i = 0; i < pair_count; i++)
-    {
-        strength[i] = pairs[i].winner;
-        for (int j = i+1; j < pair_count; j++)
-        {
-            if (strength[i] < strength[j])
-            {
-                max_pair = pairs[i].winner;
-                pairs[i].winner = pairs[j].winner;
-                pairs[j].winner = max_pair;
-                return;
             }
         }
     }
     return;
 }
 
+// Sort pairs in decreasing order by strength of victory
+void sort_pairs(void)
+{
+    for (int i = pair_count - 1; i >= 0; i--)
+    {
+        for (int j = 0; j <= i - 1; j++)
+        {
+            if ((preferences[pairs[j].winner][pairs[j].loser]) < (preferences[pairs[j+1].winner][pairs[j+1].loser]))
+            {
+                pair temp = pairs[j];
+                pairs[j] = pairs[j+1];
+                pairs[j+1] = temp;
+            }
+        }
+    }
+    return;
+}
+
+// Ensures that no cycle is being created
+bool cycle(int end, int cycle_start)
+{
+    if (end == cycle_start)
+    {
+        return true;
+    }
+
+    // Loops for recursive case
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[end][i])
+        {
+            if (cycle(i, cycle_start))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        for (int j = i+1; j < pair_count; j++)
+        if (!cycle(pairs[i].loser, pairs[i].winner))
         {
-            locked[i][j] = true;
-            locked[j][i] = false;
-            return;
+            locked[pairs[i].winner][pairs[i].loser] = true;
         }
     }
     return;
@@ -198,12 +207,19 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
+        int false_count = 0;
+        for (int j = 0; j < candidate_count; j++)
         {
-            printf("%s", candidates[i]);
-            return;
+            if (locked[j][i]  == false)
+            {
+                false_count++;
+                if (false_count == candidate_count)
+                {
+                    printf("%s\n", candidates[i]);
+                }
+            }
         }
     }
     return;
