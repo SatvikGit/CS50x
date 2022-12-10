@@ -207,19 +207,19 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        bool loser = false;
+        int falsecount = 0;
         for (int j = 0; j < candidate_count; j++)
         {
             if (locked[j][i]  == false)
             {
-                loser = true;
-                break;
+                falsecount++;
             }
         }
 
-        if (!loser)
+        if (falsecount == candidate_count)
         {
             printf("%s\n", candidates[i]);
+            return;
         }
     }
     return;
