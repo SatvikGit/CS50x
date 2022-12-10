@@ -214,6 +214,7 @@ void print_winner(void)
             if (locked[j][i]  == false)
             {
                 false_count++;
+                
                 if (false_count == candidate_count)
                 {
                     printf("%s\n", candidates[i]);
