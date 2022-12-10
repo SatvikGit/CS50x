@@ -152,19 +152,17 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < pair_count - 1; i++)
     {
-        int max = i;
-        for (int j = i; j < pair_count; j++)
+        for (int j = 0; j < pair_count - i - 1; j++)
         {
-            if ((preferences[pairs[j].winner][pairs[j].loser]) > (preferences[pairs[max].winner][pairs[max].loser]))
+            if ((preferences[pairs[j].winner][pairs[j].loser]) < (preferences[pairs[j+1].winner][pairs[j+1].loser]))
             {
-                max = j;
+                pair temp = pairs[j];
+                pairs[j] = pairs[j+1];
+                pairs[j+1] = temp;
             }
         }
-        pair temp = pairs[i];
-        pairs[i] = pairs[max];
-        pairs[max] = temp;
     }
     return;
 }
@@ -180,7 +178,7 @@ bool cycle(int end, int cycle_start)
     // Loops for recursive case
     for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[end][i] && cycle(i, cycle_start))
+        if (locked[end][i])
         {
             return true;
         }
