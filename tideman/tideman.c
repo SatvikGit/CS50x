@@ -28,10 +28,10 @@ int candidate_count;
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
+bool cycle(int end, int cycle_start);
 void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
-bool cycle(int end, int cycle_start);
 void lock_pairs(void);
 void print_winner(void);
 
@@ -130,7 +130,7 @@ void add_pairs(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = i + 1; i < candidate_count; j++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
             if (preferences[i][j] > preferences[j][i])
             {
@@ -147,6 +147,7 @@ void add_pairs(void)
             }
         }
     }
+    return;
 }
 
 // Sort pairs in decreasing order by strength of victory
@@ -156,11 +157,11 @@ void sort_pairs(void)
     {
         for (int j = 0; j < pair_count - i - 1; j++)
         {
-            if ((preferences[pairs[j].winner][pairs[j].loser]) < (preferences[pairs[j+1].winner][pairs[j+1].loser]))
+            if (preferences[pairs[j].winner][pairs[j].loser] < preferences[pairs[j + 1].winner][pairs[j + 1].loser])
             {
                 pair temp = pairs[j];
-                pairs[j] = pairs[j+1];
-                pairs[j+1] = temp;
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
             }
         }
     }
@@ -175,7 +176,7 @@ bool cycle(int end, int cycle_start)
         return true;
     }
 
-    // Loops for recursive case
+    // Checks for recursive case
     for (int i = 0; i < candidate_count; i++)
     {
         if (locked[end][i])
@@ -189,7 +190,7 @@ bool cycle(int end, int cycle_start)
     return false;
 }
 
-// Lock pairs into the candidate graph in order, without creating cycles
+// Lock pairs into the candidate graph in order, without creationg cycles
 void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
@@ -207,16 +208,17 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        int falsecount = 0;
+        int false_count = 0;
+
         for (int j = 0; j < candidate_count; j++)
         {
-            if (locked[j][i]  == false)
+            if (locked[j][i] == false)
             {
-                falsecount++;
+                false_count++;
             }
         }
 
-        if (falsecount == candidate_count)
+        if (false_count == candidate_count)
         {
             printf("%s\n", candidates[i]);
             return;
