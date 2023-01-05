@@ -8,11 +8,11 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            BYTE newpixel_g[i][j] = round((RGBTRIPLE.rgbtBlue[i][j] + RGBTRIPLE.rgbtGreen[i][j] + RGBTRIPLE.rgbtRed[i][j]) / 3);
+            BYTE newpixel_g[i][j] = round((RGBTRIPLE[i][j].rgbtBlue + RGBTRIPLE[i][j].rgbtGreen + RGBTRIPLE[i][j].rgbtRed) / 3);
 
-            RGBTRIPLE.rgbtBlue[i][j] = newpixel_g[i][j];
-            RGBTRIPLE.rgbtGreen[i][j] = newpixel_g[i][j];
-            RGBTRIPLE.rgbtRed[i][j] = newpixel_g[i][j];
+            RGBTRIPLE[i][j].rgbtBlue = newpixel_g[i][j];
+            RGBTRIPLE[i][j].rgbtGreen = newpixel_g[i][j];
+            RGBTRIPLE[i][j].rgbtRed = newpixel_g[i][j];
         }
     }
     return;
