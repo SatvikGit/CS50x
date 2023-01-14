@@ -123,7 +123,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
 
-                    
+                    Gx_blue += temp[i + k][j + l].rgbtBlue * 
                 }
             }
         }
