@@ -130,7 +130,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     Gy_green += temp[i + k][j + l].rgbtGreen * Gy[i][j];
                     Gy_red += temp[i + k][j + l],rgbtRed * Gy[i][j];
 
-                    
+                    image[i][j]
                 }
             }
         }
