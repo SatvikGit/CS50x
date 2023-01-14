@@ -95,6 +95,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            float Gx_blue;
+            float Gx_green;
+            float Gx_red;
+            float Gy_blue;
+            float Gy_green;
+            float Gy_red;
+
+            Gx_blue = Gx_green = Gx_red = Gy_blue = Gy_green = Gy_red = 0;
+
             temp[i][j] = image[i][j];
 
             Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
