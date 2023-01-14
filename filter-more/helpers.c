@@ -58,9 +58,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
             sum_blue = sum_green = sum_red = counter = 0;
 
-            for (int k = -1; k < 2; k++)
+            for (int k = i -1; k <= 1; k++)
             {
-                for (int l = -1; l < 2; l++)
+                for (int l = j -1; l <= 1; l++)
                 {
                     if (i + k < 0 || i + k > height)
                     {
@@ -89,6 +89,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    
+
     return;
 }
