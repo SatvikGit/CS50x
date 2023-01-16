@@ -128,7 +128,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     Gx_red += temp[i + k][j + l].rgbtRed * Gx[i][j];
                     Gy_blue += temp[i + k][j + l].rgbtBlue * Gy[i][j];
                     Gy_green += temp[i + k][j + l].rgbtGreen * Gy[i][j];
-                    Gy_red += temp[i + k][j + l],rgbtRed * Gy[i][j];
+                    Gy_red += temp[i + k][j + l].rgbtRed * Gy[i][j];
 
                     image[i][j].rgbtBlue = round(sqrt((Gx_blue * Gx_blue) + (Gy_blue * Gy_blue)));
                     image[i][j].rgbtGreen = round(sqrt((Gx_green * Gx_green) + (Gy_green * Gy_green)));
