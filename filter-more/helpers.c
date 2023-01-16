@@ -123,12 +123,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
 
-                    Gx_blue += temp[i + k][j + l].rgbtBlue * Gx[i][j];
-                    Gx_green += temp[i + k][j + l].rgbtGreen * Gx[i][j];
-                    Gx_red += temp[i + k][j + l].rgbtRed * Gx[i][j];
-                    Gy_blue += temp[i + k][j + l].rgbtBlue * Gy[i][j];
-                    Gy_green += temp[i + k][j + l].rgbtGreen * Gy[i][j];
-                    Gy_red += temp[i + k][j + l].rgbtRed * Gy[i][j];
+                    Gx_blue += temp[i + k][j + l].rgbtBlue * Gx[k + 1][l + 1];
+                    Gx_green += temp[i + k][j + l].rgbtGreen * Gx[k + 1][l + 1];
+                    Gx_red += temp[i + k][j + l].rgbtRed * Gx[k + 1][l + 1];
+                    Gy_blue += temp[i + k][j + l].rgbtBlue * Gy[k + 1][l + 1];
+                    Gy_green += temp[i + k][j + l].rgbtGreen * Gy[k + 1][l + 1];
+                    Gy_red += temp[i + k][j + l].rgbtRed * Gy[k + 1][l + 1];
 
                     image[i][j].rgbtBlue = round(sqrt((Gx_blue * Gx_blue) + (Gy_blue * Gy_blue)));
                     image[i][j].rgbtGreen = round(sqrt((Gx_green * Gx_green) + (Gy_green * Gy_green)));
