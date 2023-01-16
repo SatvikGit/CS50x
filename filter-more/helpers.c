@@ -105,10 +105,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gx_blue = Gx_green = Gx_red = Gy_blue = Gy_green = Gy_red = 0;
 
             temp[i][j] = image[i][j];
+        }
+    }
 
-            int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
-            int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
             for (int k = -1; k < 2; k++)
             {
                 for (int l = -1; l < 2; l++)
