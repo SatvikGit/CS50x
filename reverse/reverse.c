@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     fread(&WAVHEADER.numChannels, sizeof(WORD), 1, filer);
     fread(&WAVHEADER.sampleRate, sizeof(DWORD), 1, filer);
     fread(&WAVHEADER.byteRate, sizeof(DWORD), 1, filer);
-    fread(WAVHEADER.chunkID, sizeof(BYTE), 4, filer);
+    fread(&WAVHEADER.blockAlign, sizeof(WORD), 1, filer);
 
 
 
