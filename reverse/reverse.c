@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     }
 
     // Open input file for reading
-    FILE* filer = fopen("input.wav", "r")
+    FILE* filer = fopen("input.wav", "r");
     if (filer == NULL)
     {
         printf("Input is not a WAV file\n");
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
     // Open output file for writing
     FILE* filew = fopen("input.wav", "w");
-    if (filew = NULL)
+    if (filew == NULL)
     {
         return 3;
     }
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if (sizeof(h))
+    
     return 0;
 }
 
