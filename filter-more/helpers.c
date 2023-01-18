@@ -4,12 +4,18 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
+    // Iterates through every pixel of image
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            BYTE newpixel_g;
-            newpixel_g = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3);
+            int newpixel_g;
+            float Blue = image[i][j].rgbtBlue;
+            float Green = image[i][j].rgbtGreen;
+            float Red = image[i][j].rgbtRed;
+
+            // Calculates new value for each pixel
+            newpixel_g = round((Blue + Green + Red) / 3);
 
             image[i][j].rgbtBlue = newpixel_g;
             image[i][j].rgbtGreen = newpixel_g;
@@ -22,13 +28,14 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    // Iterates through each pixel but only till half of width because we just have to reflect transfer each pixel to opposite side
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width/ 2; j++)
+        for (int j = 0; j < width / 2; j++)
         {
             RGBTRIPLE temp = image[i][j];
-            image[i][j] = image[i][width - j];
-            image[i][width - j] = temp;
+            image[i][j] = image[i][width - (j + 1)];
+            image[i][width - (j + 1)] = temp;
         }
     }
     return;
@@ -38,7 +45,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temp[height][width];
-
+    // Stores image value in a temp array because original pixels will be blurred simunltaneously as we iterate through the image
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -58,16 +65,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
             sum_blue = sum_green = sum_red = counter = 0;
 
-            for (int k = i -1; k <= 1; k++)
+            for (int k = -1; k <= 1; k++)
             {
-                for (int l = j -1; l <= 1; l++)
+                for (int l = -1; l <= 1; l++)
                 {
-                    if (i + k < 0 || i + k > height)
+                    // Checks if the pixel is not out of image especially for corner pixels
+                    if (i + k < 0 || i + k >= height)
                     {
                         continue;
                     }
 
-                    if (j + l < 0 || j + l > width)
+                    if (j + l < 0 || j + l >= width)
                     {
                         continue;
                     }
@@ -99,6 +107,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
+    // Initializes Sobel arrays
     int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
@@ -119,16 +128,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int l = -1; l < 2; l++)
                 {
-                    if (i + k < 0 || i + k > height - 1)
+                    if (i + k < 0 || i + k >= height)
                     {
                         continue;
                     }
 
-                    if (j + l < 0 || j + l > height - 1)
+                    if (j + l < 0 || j + l >= width)
                     {
                         continue;
                     }
 
+                    // Calculate new values after applying Sobel's algorithm
                     Gx_blue += temp[i + k][j + l].rgbtBlue * Gx[k + 1][l + 1];
                     Gx_green += temp[i + k][j + l].rgbtGreen * Gx[k + 1][l + 1];
                     Gx_red += temp[i + k][j + l].rgbtRed * Gx[k + 1][l + 1];
@@ -138,10 +148,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
+            // Stores new values for Gx and Gy in a single temporary variable
             int Blue = round(sqrt((Gx_blue * Gx_blue + Gy_blue * Gy_blue)));
             int Green = round(sqrt((Gx_green * Gx_green + Gy_green * Gy_green)));
             int Red = round(sqrt((Gx_red * Gx_red + Gy_red * Gy_red)));
 
+            // Cap these value at 255
             if (Blue > 255)
             {
                 Blue = 255;
@@ -157,6 +169,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 Red = 255;
             }
 
+            // Update original pixels in the image
             image[i][j].rgbtBlue = Blue;
             image[i][j].rgbtGreen = Green;
             image[i][j].rgbtRed = Red;
