@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     }
 
     // Read header into an array
-    
+    fread(WAVHEADER.chunkID, sizeof(BYTE))
 
     // Use check_format to ensure WAV format
     // TODO #4
