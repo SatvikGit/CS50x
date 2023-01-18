@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     }
 
     // Read header into an array
-    fread(WAVHEADER.chunkID, sizeof(BYTE), 4, filer);
+    fread(&WAVHEADER, sizeof(), 4, filer);
     fread(&WAVHEADER.chunkSize, sizeof(DWORD), 1, filer);
     fread(WAVHEADER.format, sizeof(BYTE), 4, filer);
     fread(WAVHEADER.subchunk1ID, sizeof(BYTE), 4, filer);
