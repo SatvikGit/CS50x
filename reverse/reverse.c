@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     fread(&WAVHEADER.subchunk2Size, sizeof(DWORD), 1, filer);
 
     // Use check_format to ensure WAV format
-    
+
 
     // Open output file for writing
     // TODO #5
@@ -58,6 +58,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
+    if (sizeof)
     return 0;
 }
 
