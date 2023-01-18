@@ -32,7 +32,11 @@ int main(int argc, char *argv[])
 
 
     // Open output file for writing
-    // TODO #5
+    FILE* filew = fopen("input.wav", "w");
+    if (filew = NULL)
+    {
+        return 3;
+    }
 
     // Write header to file
     // TODO #6
