@@ -35,11 +35,12 @@ int main(int argc, char *argv[])
     fread(&WAVHEADER.sampleRate, sizeof(DWORD), 1, filer);
     fread(&WAVHEADER.byteRate, sizeof(DWORD), 1, filer);
     fread(&WAVHEADER.blockAlign, sizeof(WORD), 1, filer);
-
-
+    fread(&WAVHEADER.bitsPerSample, sizeof(WORD), 1, filer);
+    fread(WAVHEADER.subchunk2ID, sizeof(BYTE), 4, filer);
+    fread(&WAVHEADER.subchunk2Size, sizeof(DWORD), 1, filer);
 
     // Use check_format to ensure WAV format
-    // TODO #4
+    
 
     // Open output file for writing
     // TODO #5
