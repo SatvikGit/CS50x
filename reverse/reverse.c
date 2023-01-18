@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
 
     // Open output file for writing
-    FILE* filew = fopen("input.wav", "w");
+    FILE* filew = fopen(file_name, "w");
     if (filew == NULL)
     {
         return 3;
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-
+    if (header.format[0])
     return 0;
 }
 
