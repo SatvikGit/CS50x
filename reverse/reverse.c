@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     }
 
     // Open input file for reading
+    FILE* filer = fopen("input.wav", "r")
 
 
     // Read header into an array
