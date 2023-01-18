@@ -18,6 +18,11 @@ int main(int argc, char *argv[])
 
     // Open input file for reading
     FILE* filer = fopen("input.wav", "r")
+    if (filer == NULL)
+    {
+        printf("Input is not a WAV file\n");
+        return 2;
+    }
 
 
     // Read header into an array
