@@ -12,12 +12,12 @@ int main(int argc, char *argv[])
     // Ensure proper usage
     if (argc != 3)
     {
-        printf("Usage : ./reverse INFILE.wav OUTFILE.wav\n");
+        printf("Usage : ./reverse input.wav output.wav\n");
         return 1;
     }
 
     // Open input file for reading
-    // TODO #2
+
 
     // Read header into an array
     // TODO #3
