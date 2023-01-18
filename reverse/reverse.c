@@ -25,19 +25,8 @@ int main(int argc, char *argv[])
     }
 
     // Read header into an array
-    fread(&WAVHEADER, sizeof(), 4, filer);
-    fread(&WAVHEADER.chunkSize, sizeof(DWORD), 1, filer);
-    fread(WAVHEADER.format, sizeof(BYTE), 4, filer);
-    fread(WAVHEADER.subchunk1ID, sizeof(BYTE), 4, filer);
-    fread(&WAVHEADER.subchunk1Size, sizeof(DWORD), 1, filer);
-    fread(&WAVHEADER.audioformat, sizeof(WORD), 1, filer);
-    fread(&WAVHEADER.numChannels, sizeof(WORD), 1, filer);
-    fread(&WAVHEADER.sampleRate, sizeof(DWORD), 1, filer);
-    fread(&WAVHEADER.byteRate, sizeof(DWORD), 1, filer);
-    fread(&WAVHEADER.blockAlign, sizeof(WORD), 1, filer);
-    fread(&WAVHEADER.bitsPerSample, sizeof(WORD), 1, filer);
-    fread(WAVHEADER.subchunk2ID, sizeof(BYTE), 4, filer);
-    fread(&WAVHEADER.subchunk2Size, sizeof(DWORD), 1, filer);
+    WAVHEADER header;
+    fread(&header, sizeof(WAVHEADER), 1, filer);
 
     // Use check_format to ensure WAV format
 
@@ -58,7 +47,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if (sizeof)
+    if (sizeof(h))
     return 0;
 }
 
