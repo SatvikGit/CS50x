@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     // Ensure proper usage
     if (argc != 3)
     {
-        printf("Proper usage : program name, INFILE.wav, OUTFILE.wav\n");
+        printf("Usage : ./reverse INFILE.wav OUTFILE.wav\n");
         return 1;
     }
 
