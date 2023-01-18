@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
         return 2;
     }
 
-
     // Read header into an array
     // TODO #3
 
