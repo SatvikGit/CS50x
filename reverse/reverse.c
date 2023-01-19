@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     }
 
     // Write header to file
-    f
+    fwrite(&header, sizeof(WAVHEADER), 1, filew);
 
     // Use get_block_size to calculate size of block
     // TODO #7
