@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     fread(&header, sizeof(WAVHEADER), 1, filer);
 
     // Use check_format to ensure WAV format
-
+    check_format
 
     // Open output file for writing
     FILE* filew = fopen(file_name, "w");
