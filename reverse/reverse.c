@@ -43,10 +43,10 @@ int main(int argc, char *argv[])
     fwrite(&header, sizeof(WAVHEADER), 1, filew);
 
     // Use get_block_size to calculate size of block
-    
+    get_block_size(header);
 
     // Write reversed audio to file
-    // TODO #8
+    
 }
 
 int check_format(WAVHEADER header)
