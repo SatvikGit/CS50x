@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     unsigned char buffer[512];
     int counter = 0;
-    int jfound = 0;
+    char filename[8];
     FILE *w_ptr = NULL;
 
     // Iterates till fread returns 1
@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
                 jfound = 1;
             }
 
-            char filename[8];
             sprintf(filename, "%03i.jpeg", counter);
 
             // Opens file for reading
