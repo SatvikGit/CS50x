@@ -31,7 +31,12 @@ int main(int argc, char *argv[])
         // Checks if file opened is indeed a jpeg file
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            // Closes reading pointer even if one image is detecte
+            // Closes reading pointer even if one image is detected
+            if (w_ptr != NULL)
+            {
+                fclose(w_ptr);
+            }
+            
             sprintf(filename, "%03i.jpeg", counter);
 
             // Opens file for reading
