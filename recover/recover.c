@@ -44,10 +44,8 @@ int main(int argc, char *argv[])
         {
             fwrite(buffer, 512, 1, w_ptr);
         }
-
-        free(filename);
     }
-    
+    free(filename);
     fclose(r_ptr);
     fclose(w_ptr);
     return 0;
