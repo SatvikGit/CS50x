@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 
     // Iterates till fread returns 1
-    while (fread(buffer, 512, 1, r_ptr) != 0)
+    while (fread(buffer, 512, 1, r_ptr))
     {
         // Checks if file opened is indeed a jpeg file
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
