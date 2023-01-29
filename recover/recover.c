@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-typedef uint8_t = BYTE;
+typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    iname = argv[1];
+    char* iname = argv[1];
 
     FILE *inptr = fopen(iname, "r");
     if (inptr == NULL)
@@ -21,5 +21,34 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    
+    BYTE buffer[512];
+    int counter = 0;
+    FILE *outptr = NULL;
+    char name[8];
+
+    while (fread(&buffer, 512, 1, inptr))
+    {
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+            if (counter > 0)
+            {
+                fclose(outptr);
+            }
+
+            sprintf(name, "%03i.jpg", counter);
+            counter++;
+        }
+
+        outptr = fopen(name, "w");
+
+        if (counter > 0)
+        {
+            fwrite(&buffer, 512, 1, outptr);
+        }
+    }
+
+    fclose(inptr);
+    fclose(outptr);
+
+    return 0;
 }
