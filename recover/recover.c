@@ -22,25 +22,16 @@ int main(int argc, char *argv[])
 
     unsigned char buffer[512];
     int counter = 0;
-    char filename[8];
     FILE *w_ptr = NULL;
+    char *filename = malloc(sizeof(char));
+
 
     // Iterates till fread returns 1
-    while (fread(&buffer, 512, 1, r_ptr) == 1)
+    while (fread(&buffer, 512, 1, r_ptr) != 0)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
-            // Closes reading pointer even if one image is detected
-            if (jfound == 1)
-            {
-                fclose(w_ptr);
-            }
-
-            else
-            {
-                jfound = 1;
-            }
-
+            // Closes reading pointer even if one image is detecte
             sprintf(filename, "%03i.jpeg", counter);
 
             // Opens file for reading
@@ -49,9 +40,9 @@ int main(int argc, char *argv[])
         }
 
         // Writes to the file even if one image is detected
-        if (jfound == 1)
+        if (w_ptr != NULL)
         {
-            fwrite(&buffer, 512, 1, w_ptr);
+            fwrite(buffer, 512, 1, w_ptr);
         }
 
         fclose(r_ptr);
