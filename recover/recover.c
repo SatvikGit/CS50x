@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    char* iname = argv[1];
+    char *iname = argv[1];
 
     // Opens file pointer for reading
     FILE *inptr = fopen(iname, "r");
