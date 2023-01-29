@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     unsigned char buffer[512];
     int counter = 0;
     FILE *w_ptr = NULL;
-    char *filename = malloc(sizeof(char));
+    char *filename = malloc(8 * sizeof(char));
 
     // Iterates till fread returns 1
     while (fread(buffer, 512, 1, r_ptr))
