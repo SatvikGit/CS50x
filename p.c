@@ -3,7 +3,6 @@
 int main()
 {
     int k = 5;
-    int *pk = &k;
-    printf("%i\n", *pk);
+    printf("%i\n", *(&k));
     return 0;
 }
