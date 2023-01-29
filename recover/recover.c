@@ -6,6 +6,7 @@ typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
+    // Checks for correct number of cmd arguements
     if (argc != 2)
     {
         printf("Usage: ./recover IMAGE\n");
@@ -14,6 +15,7 @@ int main(int argc, char *argv[])
 
     char* iname = argv[1];
 
+    // Opens file pointer for reading
     FILE *inptr = fopen(iname, "r");
     if (inptr == NULL)
     {
@@ -26,12 +28,14 @@ int main(int argc, char *argv[])
     FILE *outptr = NULL;
     char name[8];
 
+    // Checks that file read correctly
     while (fread(&buffer, 512, 1, inptr))
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             if (counter > 0)
             {
+                // Checks if writing pointer is null or not
                 if (fclose(outptr) != 0)
                 {
                     fclose(inptr);
@@ -42,6 +46,7 @@ int main(int argc, char *argv[])
             sprintf(name, "%03d.jpg", counter);
             counter++;
 
+            // Opens file pointer for writing
             outptr = fopen(name, "w");
             if (outptr == NULL)
             {
@@ -56,6 +61,7 @@ int main(int argc, char *argv[])
         }
     }
 
+    // Closes file pointers
     fclose(inptr);
     fclose(outptr);
 
