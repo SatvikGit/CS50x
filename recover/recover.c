@@ -23,24 +23,24 @@ int main(int argc, char *argv[])
     unsigned char buffer[512];
     int counter = 0;
     FILE *w_ptr = NULL;
-    char *filename = malloc(8 * sizeof(char));
+    char image[7];
 
     // Iterates till fread returns 1
-    while (fread(buffer, 512, 1, r_ptr))
+    while (fread(buffer, 512, 1, r_ptr) == 1)
     {
         // Checks if file opened is indeed a jpeg file
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             // Closes reading pointer even if one image is detected
-            if (w_ptr != NULL)
+            if (counter > 0)
             {
                 fclose(w_ptr);
             }
-            
-            sprintf(filename, "%03i.jpeg", counter);
+
+            sprintf(image, "%03i.jpeg", counter);
 
             // Opens file for reading
-            w_ptr = fopen(filename, "w");
+            w_ptr = fopen(image, "w");
             counter++;
         }
 
@@ -51,8 +51,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    // Frees the allocated memory and closes filepointers
-    free(filename);
+    // Closes filepointers
     fclose(r_ptr);
     fclose(w_ptr);
 
