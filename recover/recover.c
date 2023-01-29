@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
                 fclose(outptr);
             }
 
-            sprintf(name, "%03i.jpg", counter);
+            sprintf(name, "%03d.jpg", counter);
             counter++;
         }
 
