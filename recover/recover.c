@@ -25,12 +25,11 @@ int main(int argc, char *argv[])
     FILE *w_ptr = NULL;
     char *filename = malloc(sizeof(char));
 
-
     // Iterates till fread returns 1
     while (fread(buffer, 512, 1, r_ptr))
     {
         // Checks if file opened is indeed a jpeg file
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             // Closes reading pointer even if one image is detecte
             sprintf(filename, "%03i.jpeg", counter);
@@ -51,5 +50,6 @@ int main(int argc, char *argv[])
     free(filename);
     fclose(r_ptr);
     fclose(w_ptr);
+
     return 0;
 }
