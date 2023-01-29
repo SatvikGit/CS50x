@@ -32,7 +32,11 @@ int main(int argc, char *argv[])
         {
             if (counter > 0)
             {
-                fclose(outptr);
+                if (fclose(outptr) != 0)
+                {
+                    fclose(inptr);
+                    return 1;
+                }
             }
 
             sprintf(name, "%03d.jpg", counter);
