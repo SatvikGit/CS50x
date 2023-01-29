@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
                 jfound = 1;
             }
 
-            char filename[9];
+            char filename[8];
             sprintf(filename, "%03i.jpeg", counter);
 
             // Opens file for reading
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         }
 
         // Writes to the file even if one image is detected
-        if (counter == 1)
+        if (jfound == 1)
         {
             fwrite(&buffer, 512, 1, w_ptr);
         }
