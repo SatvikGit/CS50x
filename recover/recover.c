@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
     // Iterates till fread returns 1
     while (fread(buffer, 512, 1, r_ptr) != 0)
     {
+        // Checks if file opened is indeed a jpeg file
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
             // Closes reading pointer even if one image is detecte
@@ -39,12 +40,14 @@ int main(int argc, char *argv[])
             counter++;
         }
 
-        // Writes to the file even if one image is detected
+        // Writes to file if writing pointer has been opened correctly
         if (w_ptr != NULL)
         {
             fwrite(buffer, 512, 1, w_ptr);
         }
     }
+
+    // Frees the allocated memory and closes filepointers
     free(filename);
     fclose(r_ptr);
     fclose(w_ptr);
