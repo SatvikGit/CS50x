@@ -41,9 +41,14 @@ int main(int argc, char *argv[])
 
             sprintf(name, "%03d.jpg", counter);
             counter++;
-        }
 
-        outptr = fopen(name, "w");
+            outptr = fopen(name, "w");
+            if (outptr == NULL)
+            {
+                fclose(inptr);
+                return 1;
+            }
+        }
 
         if (counter > 0)
         {
