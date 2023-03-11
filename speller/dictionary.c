@@ -41,9 +41,9 @@ unsigned int hash(const char *word)
     {
         int j = 0;
         j += word[i];
-        k = h / strlen(word);
+        k = j % N;
     }
-    return k % N;
+    return k;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -69,6 +69,9 @@ bool load(const char *dictionary)
 
         strcopy(n->word, nextw);
         int hashv = hash(nextw);
+        n->next = table[hashv];
+        table[hashv] = n;
+        
     }
     return false;
 }
