@@ -32,10 +32,11 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     for (char i = word[0]; i != "\n"; i++)
     {
-        int h = word
-        h++;
+        int j = 0;
+        j += word[i];
+        k = h / strlen(word);
     }
-    return toupper(word[0]) - 'A';
+    return k % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
