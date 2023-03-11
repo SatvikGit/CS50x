@@ -60,7 +60,11 @@ unsigned int size(void)
     {
         while ((ch = getc(inptr)) != EOF)
         {
-            
+            if (ch = "\n")
+            {
+                count++;
+                return count;
+            }
         }
     }
     return 0;
