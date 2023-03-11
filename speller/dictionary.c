@@ -54,10 +54,14 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
+    int count = 0;
     // TODO
     if (inptr != NULL)
     {
-        re
+        while ((ch = getc(inptr)) != EOF)
+        {
+            
+        }
     }
     return 0;
 }
