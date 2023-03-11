@@ -60,7 +60,15 @@ bool load(const char *dictionary)
 
     while (fscanf(inptr, "%s", nextw) != EOF)
     {
-        
+        node* n = malloc(sizeof(node));
+
+        if (n == NULL)
+        {
+            return false;
+        }
+
+        strcopy(n->word, nextw);
+        int hashv = hash(nextw);
     }
     return false;
 }
