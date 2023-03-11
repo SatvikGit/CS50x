@@ -25,6 +25,11 @@ bool check(const char *word)
     // TODO
     char* buffer[LENGTH];
     gets(buffer, LENGTH, inptr);
+    if (word == buffer[LENGTH])
+    {
+        return true;
+    }
+    else
     return false;
 }
 
