@@ -23,6 +23,8 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    char* buffer[LENGTH];
+    gets()
     return false;
 }
 
