@@ -46,11 +46,12 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int j = 0;
+    int j;
+    unsigned long hash = 5381;
     // Improve this hash function
-    for (int i = 0; i <= strlen(word); i++)
+    while ((c = *word++))
     {
-        j += tolower(word[i]);
+        hash = ((hash << 5) + hash) + j;
     }
     return j % N;
 }
