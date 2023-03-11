@@ -38,7 +38,8 @@ bool check(const char *word)
 
     wordc[n] = '\0';
 
-    int h = hash
+    int h = hash(wordc);
+    node* cursor = hast
     return false;
 }
 
