@@ -2,6 +2,11 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -13,8 +18,9 @@ typedef struct node
 }
 node;
 
-// TODO: Choose number of buckets in hash table
+// Choose number of buckets in hash table
 const unsigned int N = 26;
+int dicts = 0;
 
 // Hash table
 node *table[N];
@@ -22,21 +28,25 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
-    char* buffer[LENGTH];
-    gets(buffer, LENGTH, inptr);
-    if (word == buffer[LENGTH])
+    //
+    int hashv = hash(word);
+    node* n = table[hashv];
+
+    while (n != NULL)
     {
-        return true;
+        if (strcasecomp(word, n->word) == 0)
+        {
+            return true;
+        }
+        n = n->next;
     }
-    else
     return false;
 }
 
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
+    // Improve this hash function
     for (char i = word[0]; i != "\n"; i++)
     {
         int j = 0;
@@ -49,7 +59,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
+    //
     FILE *inptr = fopen(dictionary, "r")
     if (inptr = NULL)
     {
@@ -67,37 +77,42 @@ bool load(const char *dictionary)
             return false;
         }
 
-        strcopy(n->word, nextw);
+        char* strcopy(n->word, nextw);
         int hashv = hash(nextw);
         n->next = table[hashv];
         table[hashv] = n;
-        
+        dicts++;
     }
+    fclose(inptr);
     return false;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    int count = 0;
-    // TODO
-    if (inptr != NULL)
-    {
-        while ((ch = getc(inptr)) != EOF)
-        {
-            if (ch = "\n")
-            {
-                count++;
-                return count;
-            }
-        }
-    }
-    return 0;
+    //
+    return dicts;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
+    //
+    for (int i = 0; i < N; i++)
+    {
+        node* n = table[i];
+
+        while (n != NULL)
+        {
+            node* temp = n;
+            n = n->next;
+            free(temp);
+        }
+
+        if (n == NULL && i == (N - 1))
+        {
+            return true;
+        }
+    }
     return false;
 }
