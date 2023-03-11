@@ -34,7 +34,7 @@ bool check(const char *word)
 
     while (n != NULL)
     {
-        if (strcasecomp(word, n->word) == 0)
+        if (strcasecmp(word, n->word) == 0)
         {
             return true;
         }
@@ -47,11 +47,11 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // Improve this hash function
-    for (char i = word[0]; i != "\n"; i++)
+    for (int i = 0; i <= strlen(word); i++)
     {
         int j = 0;
         j += word[i];
-        k = j % N;
+        int k = j % N;
     }
     return k;
 }
