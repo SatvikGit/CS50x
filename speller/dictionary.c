@@ -60,8 +60,8 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     //
-    FILE *inptr = fopen(dictionary, "r")
-    if (inptr = NULL)
+    FILE *inptr = fopen(dictionary, "r");
+    if (inptr == NULL)
     {
         return false;
     }
@@ -77,14 +77,14 @@ bool load(const char *dictionary)
             return false;
         }
 
-        char* strcopy(n->word, nextw);
+        char* strcpy(n->word,nextw);
         int hashv = hash(nextw);
         n->next = table[hashv];
         table[hashv] = n;
         dicts++;
     }
     fclose(inptr);
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
