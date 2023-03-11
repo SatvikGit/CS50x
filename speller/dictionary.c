@@ -19,7 +19,7 @@ typedef struct node
 node;
 
 // Choose number of buckets in hash table
-const unsigned int N = 100000;
+const unsigned int N = 1000;
 int dicts = 0;
 
 // Hash table
@@ -50,7 +50,7 @@ unsigned int hash(const char *word)
     // Improve this hash function
     for (int i = 0; i <= strlen(word); i++)
     {
-        j += word[i];;
+        j += tolower(word[i]);
     }
     return j % N;
 }
