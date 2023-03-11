@@ -57,7 +57,11 @@ bool load(const char *dictionary)
     }
 
     char nextw[LENGTH + 1];
-    
+
+    while (fscanf(inptr, "%s", nextw) != EOF)
+    {
+        
+    }
     return false;
 }
 
