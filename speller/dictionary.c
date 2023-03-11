@@ -46,14 +46,13 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
+    int j = 0;
     // Improve this hash function
     for (int i = 0; i <= strlen(word); i++)
     {
-        int j = 0;
-        j += word[i];
-        int k = j % N;
+        j += word[i];;
     }
-    return k;
+    return j % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
