@@ -19,7 +19,7 @@ typedef struct node
 node;
 
 // Choose number of buckets in hash table
-const unsigned int N = 100000;
+const unsigned int N = 1000;
 int dicts = 0;
 
 // Hash table
@@ -29,17 +29,13 @@ node *table[N];
 bool check(const char *word)
 {
     //
-    char wordc[LENGTH + 1];
-
-    for (int i = 0; i < strlen(word); i++)
+    for (node* tmp = table[hash(word)]; tmp != NULL; tmp = tmp->next)
     {
-        wordc[i] = tolower(word[i]);
+        if (strcasecmp(tmp->word, word) == 0)
+        {
+            return true;
+        }
     }
-
-    wordc[n] = '\0';
-
-    int h = hash(wordc);
-    node* cursor = hast
     return false;
 }
 
