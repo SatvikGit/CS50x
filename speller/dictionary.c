@@ -29,31 +29,29 @@ node *table[N];
 bool check(const char *word)
 {
     //
-    int hashv = hash(word);
-    node* n = table[hashv];
+    char wordc[LENGTH + 1];
 
-    while (n != NULL)
+    for (int i = 0; i < strlen(word); i++)
     {
-        if (strcasecmp(word, n->word) == 0)
-        {
-            return true;
-        }
-        n = n->next;
+        wordc[i] = tolower(word[i]);
     }
+
+    wordc[n] = '\0';
+
+    int h = hash
     return false;
 }
 
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int j;
-    unsigned long hash = 5381;
+    int j = 0;
     // Improve this hash function
-    while ((c = *word++))
+    for (int i = 0; i <= strlen(word); i++)
     {
-        hash = ((hash << 5) + hash) + j;
+        j += tolower(word[i]);
     }
-    return hash % N;
+    return j % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
