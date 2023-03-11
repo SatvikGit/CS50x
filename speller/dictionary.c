@@ -24,7 +24,7 @@ bool check(const char *word)
 {
     // TODO
     char* buffer[LENGTH];
-    gets()
+    gets(buffer, LENGTH, inptr);
     return false;
 }
 
