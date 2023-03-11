@@ -51,10 +51,13 @@ bool load(const char *dictionary)
 {
     // TODO
     FILE *inptr = fopen(dictionary, "r")
-    if (inptr != NULL)
+    if (inptr = NULL)
     {
-        return true;
+        return false;
     }
+
+    char nextw[LENGTH + 1];
+    
     return false;
 }
 
