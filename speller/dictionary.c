@@ -55,6 +55,10 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
+    if (inptr != NULL)
+    {
+        re
+    }
     return 0;
 }
 
