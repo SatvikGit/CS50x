@@ -53,7 +53,7 @@ unsigned int hash(const char *word)
     {
         hash = ((hash << 5) + hash) + j;
     }
-    return j % N;
+    return hash % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
