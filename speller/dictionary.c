@@ -84,6 +84,7 @@ bool load(const char *dictionary)
             return false;
         }
 
+        // Points to a new head of linked list
         strcpy(n->word,nextw);
         int hashv = hash(nextw);
         n->next = table[hashv];
@@ -97,7 +98,6 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    //
     return dicts;
 }
 
@@ -108,7 +108,6 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         node* n = table[i];
-
         while (n != NULL)
         {
             node* temp = n;
