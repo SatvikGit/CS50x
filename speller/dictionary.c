@@ -28,14 +28,14 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    char lcaseword[strlen(word) + 1];
     //
-    for (node* tmp = table[hash(word)]; tmp != NULL; tmp = tmp->next)
+    for (int i = 0; i < strlen(word); i++)
     {
-        if (strcasecmp(tmp->word, word) == 0)
-        {
-            return true;
-        }
+        lcaseword[i] = tolower(word[i]);
     }
+    lcaseword[n] = '\0';
+    
     return false;
 }
 
