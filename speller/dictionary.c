@@ -77,7 +77,7 @@ bool load(const char *dictionary)
     // Scans the file for word and string it into a buffer array named nextw
     while (fscanf(inptr, "%s", nextw) != EOF)
     {
-        // Creates a travesal node
+        // Creates a traversal node
         node* n = malloc(sizeof(node));
         if (n == NULL)
         {
