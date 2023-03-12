@@ -34,8 +34,9 @@ bool check(const char *word)
     {
         lcaseword[i] = tolower(word[i]);
     }
+
     lcaseword[n] = '\0';
-    
+    node* trav = hash
     return false;
 }
 
