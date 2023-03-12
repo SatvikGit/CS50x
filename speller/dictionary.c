@@ -35,8 +35,18 @@ bool check(const char *word)
         lcaseword[i] = tolower(word[i]);
     }
 
-    lcaseword[n] = '\0';
-    node* trav = hash
+    lcaseword[strlen(word)] = '\0';
+    unsigned int hash_value = hash(lcaseword);
+    node* trav = table[hash_value];
+
+    while (trav != NULL)
+    {
+        if (strcmp(trav->word, lcaseword) == 0)
+        {
+            return true;
+        }
+        trav = trav->next;
+    }
     return false;
 }
 
