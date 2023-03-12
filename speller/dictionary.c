@@ -28,8 +28,8 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    // Genearates an array for lowercase words and adding an extra space for null character
     char lcaseword[strlen(word) + 1];
-    //
     for (int i = 0; i < strlen(word); i++)
     {
         lcaseword[i] = tolower(word[i]);
@@ -39,6 +39,7 @@ bool check(const char *word)
     unsigned int hash_value = hash(lcaseword);
     node* trav = table[hash_value];
 
+    // Checks fro word by going to position outputted by hash function
     while (trav != NULL)
     {
         if (strcmp(trav->word, lcaseword) == 0)
@@ -54,7 +55,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     int j = 0;
-    // Improve this hash function
+    // Adds ASCII values of characters of word to a variable j
     for (int i = 0; i <= strlen(word); i++)
     {
         j += tolower(word[i]);
@@ -65,7 +66,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    //
+    // Opens a file for reading
     FILE *inptr = fopen(dictionary, "r");
     if (inptr == NULL)
     {
@@ -73,11 +74,10 @@ bool load(const char *dictionary)
     }
 
     char nextw[LENGTH + 1];
-
+    // Scans the file for word and string it into a buffer array named nextw
     while (fscanf(inptr, "%s", nextw) != EOF)
     {
         node* n = malloc(sizeof(node));
-
         if (n == NULL)
         {
             return false;
