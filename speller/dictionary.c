@@ -37,7 +37,7 @@ bool check(const char *word)
 
     lcaseword[strlen(word)] = '\0';
     unsigned int hash_value = hash(lcaseword);
-    node* trav = table[hash_value];
+    node *trav = table[hash_value];
 
     // Checks fro word by going to position outputted by hash function
     while (trav != NULL)
@@ -78,14 +78,14 @@ bool load(const char *dictionary)
     while (fscanf(inptr, "%s", nextw) != EOF)
     {
         // Creates a traversal node
-        node* n = malloc(sizeof(node));
+        node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
         }
 
         // Points to a new head of linked list
-        strcpy(n->word,nextw);
+        strcpy(n->word, nextw);
         int hashv = hash(nextw);
         n->next = table[hashv];
         table[hashv] = n;
@@ -106,10 +106,10 @@ bool unload(void)
 {
     for (int i = 0; i < N; i++)
     {
-        node* n = table[i];
+        node *n = table[i];
         while (n != NULL)
         {
-            node* temp = n;
+            node *temp = n;
             n = n->next;
             free(temp);
         }
